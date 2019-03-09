@@ -7,13 +7,27 @@ use App\annonce;
 use logdb;
 use File;
 
+/**
+ * Class annonceController gère les annonces
+ * @package App\Http\Controllers
+ */
 class annonceController extends Controller
 {
+    /**
+     * elle afficher la vue qui permet de créer une annonce
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         return view('annonce.create');
     }
 
+    /**
+     * elle créer et sauvegardre une nouvelle annonce
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -41,17 +55,31 @@ class annonceController extends Controller
         return redirect('/Annonces')->with('success', 'annonce Created');
     }
 
+    /**
+     * Elle affiche toute les annonces
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(){
         $annonces = annonce::orderBy('created_at','desc')->paginate(10);
         return view('annonce.index')->with('annonces', $annonces);
     }
 
+    /**
+     * elle retourne la vue qui affiche les détails d'une annonce
+     * @param $id => C'est le id de l'annonce
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($id)
     {
         $annonce = annonce::find($id);
         return view('annonce.show')->with('annonce', $annonce);
     }
 
+    /**
+     * Elle sert à supprimer l'annonce d'un utilisateur qui est son propriétaire.
+     * @param $id => C'est le id de l'annonce
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $annonce = annonce::find($id);
@@ -66,17 +94,28 @@ class annonceController extends Controller
             $cover_img = 'cover_img/'.$annonce->cover_image;
             File::delete($cover_img.'/your_file');
         }
-
         $annonce->delete();
         return redirect('/Annonces')->with('success', 'Post Removed');
     }
 
+    /**
+     * Elle sert à afficher la vue qui nous permettra de modifier une annonce
+     * @param $id => C'est le id de l'annonce
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id)
     {
         $annonce = annonce::find($id);
         return view('annonce.edit')->with('annonce', $annonce);
     }
 
+    /**
+     * Elle sert à modifier l'annonce
+     * @param Request $request
+     * @param $id => C'est le id de l'annonce
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -106,10 +145,9 @@ class annonceController extends Controller
         return redirect('/Annonces')->with('success', 'Annonce modifiee');
     }
 
-    public function commander($id)
+    /*public function commander($id)
     {
         $annonce = annonce::find($id);
         return view('annonce.commander')->with('annonce', $annonce);
-    }
-
+    }*/
 }

@@ -1,1 +1,0 @@
-<h1>bonjour <?php echo request('prenom') ?> </h1>

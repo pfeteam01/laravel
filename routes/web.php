@@ -29,6 +29,8 @@ Route::group([
     Route::get('/modifierprofil','profilController@afficherModifierProfil');
     Route::post('/modifierprofil','profilController@traitementmodifprofil');
     Route::get('/modifierprofil/supprimeravatar','profilController@supprimerAvatar');
+
+    Route::get('/creerannonce','annonceController@create');
 });
 
 Route::get('/resetpasswordpart1','ResetPasswordController@afficherEnterMail');
@@ -38,12 +40,13 @@ Route::post('/verifcode','ResetPasswordController@resetPasswordVerifCode');
 Route::get('/resetpasswordpart3','ResetPasswordController@afficherChangerPassword');
 Route::post('/changerpassword','ResetPasswordController@resetPasswordChangerPassword');
 
-Route::get('/creerannonce','annonceController@create');
+
 Route::resource('/Annonces','annonceController');
 Route::get('/Annonces/{$id}/commander',function(){
     return view('annonce.commander{$id}');
 });
 Route::get('/Annonces/{$id}','annonceController@show');
+
 Route::get('/a propos',function (){
     return view('a propos');
 });

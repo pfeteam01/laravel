@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 <div class="content">
     <h2>Modifier annonce</h2>
     <hr>
@@ -10,7 +8,6 @@
         {!! Form::open(['action' => ['annonceController@update',$annonce->id],
         'method' => 'POST',
         'enctype' => 'multipart/form-data']) !!}
-
             <div class="form-group">
                 {{Form::label('titre', 'titre')}}
                 {{Form::text('titre', $annonce->titre, ['class' => 'form-control', 'placeholder' => 'titre'])}}
@@ -29,7 +26,6 @@
             {{Form::number('prix',$annonce->prix, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Prix'])}}
         </div>
            @include('inc/messages')
-
             <div class="form-group">
                 {{Form::file('cover_image')}}
             </div>

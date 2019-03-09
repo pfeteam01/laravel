@@ -1,15 +1,9 @@
-
 @extends('layouts.app')
-
 @section('content')
-
-
 <div class="container">
-
     <h1>Annonce</h1>
     @if(count($annonces) > 0)
         @foreach($annonces as $annonce)
-
             <div class="well">
                 <div class="row">
                     <div class="col-md-8 col-sm-8">
@@ -21,20 +15,13 @@
                                     <hr style="height: 5px; width: 150px"> 
                                 @endif 
                             </div>
-                       
-                    </div> 
-
-                  
-
+                    </div>
                 </div>
             </div>
         @endforeach
         {{$annonces->links()}}
-
     @else
         <p>No annonce found</p>
     @endif
- 
 </div>
-
 @endsection
