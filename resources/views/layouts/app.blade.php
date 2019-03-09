@@ -52,8 +52,8 @@
             @include('flash::message')
             @auth
             @else
-            <a href="{{ url("/inscription") }} ">Inscription</a>
-            <a href="{{url('/connexion')}}">Connexion</a>
+                <a href="{{ url("/inscription") }} ">Inscription</a>
+                <a href="{{url('/connexion')}}">Connexion</a>
             @endauth
         </div>
     </body>

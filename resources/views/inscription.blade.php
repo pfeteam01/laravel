@@ -12,7 +12,7 @@
     <form action="/inscription" method="post">
         {{csrf_field()}}
         <div class="form-group">
-            <input type="text" name="nom" placeholder="Entrez votre nom" value="{{old('name')}}">
+            <input type="text" name="nom" placeholder="Entrez votre nom" value="{{old('nom')}}">
         </div>
         <div class="form-group">
             <input type="email" name="email" placeholder="Email" value="{{old('email')}}">

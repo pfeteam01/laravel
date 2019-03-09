@@ -37,3 +37,16 @@ Route::get('/resetpasswordpart2','ResetPasswordController@afficherConfirmCode');
 Route::post('/verifcode','ResetPasswordController@resetPasswordVerifCode');
 Route::get('/resetpasswordpart3','ResetPasswordController@afficherChangerPassword');
 Route::post('/changerpassword','ResetPasswordController@resetPasswordChangerPassword');
+
+Route::get('/creerannonce','annonceController@create');
+Route::resource('/Annonces','annonceController');
+Route::get('/Annonces/{$id}/commander',function(){
+    return view('annonce.commander{$id}');
+});
+Route::get('/Annonces/{$id}','annonceController@show');
+Route::get('/a propos',function (){
+    return view('a propos');
+});
+
+
+

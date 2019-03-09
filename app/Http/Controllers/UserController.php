@@ -25,7 +25,7 @@ class userController extends Controller
      */
     public function creerUser(Request $request) {
         $validate = Validator::make($request->all(),[
-            'email' => 'required|email|max:255',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed|max:255',
             'password_confirmation' => 'required',
             'nom' => 'required|max:255|min:5',

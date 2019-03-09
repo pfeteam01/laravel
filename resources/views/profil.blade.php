@@ -9,6 +9,9 @@
         <a href="{{  url("/deconnexion") }}">Deconnexion</a>
         <br><br>
         <a href="{{  url("/modifierprofil") }}">Modifier mon profil</a>
+        <br><br>
+        <a href="{{ url("/creerannonce") }}">Ajouter une annonce</a>
+        <br><br>
     @else
         <a href="{{ url("/inscription") }} ">Inscription</a>
         <a href="{{url('/connexion')}}">Connexion</a>
