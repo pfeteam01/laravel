@@ -132,8 +132,12 @@ class annonceController extends Controller
         $this->validate($request, [
             'titre' => 'required|min:5',
             'description' => 'required',
+            'surface_bien' => 'required|numeric',
+            'prix' => 'required|numeric',
             'adresse' => 'required',
-            'prix' => 'required|integer',
+            
+            'type_action.*' => 'required',
+            'typeDuBien.*' => 'required',
             'cover_image' => 'image|max:1999'
         ]);
         // Handle File Upload
@@ -146,9 +150,13 @@ class annonceController extends Controller
         }
         // Create Post
         $annonce = annonce::find($id);
-        $annonce->titre = $request->input('titre');
+         $annonce->titre = $request->input('titre');
+        $annonce->surface_bien = $request->input('surface_bien');
         $annonce->description = $request->input('description');
         $annonce->adresse = $request->input('adresse');
+        $annonce->prix = $request->input('prix');
+        $annonce->type_action = $request->input('type_action');
+        $annonce->typeDuBien = $request->input('typeDuBien');
         if($request->hasFile('cover_image')){
             $annonce->cover_image = $img_name;
         }
