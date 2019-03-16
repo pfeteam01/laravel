@@ -16,11 +16,13 @@ class CreateTableAnnonce extends Migration
         Schema::create('table_annonce', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titre');
-            $table->enum('type1', array('vente', 'location'));
+          
             $table->mediumText('description');
             $table->string('adresse');
-            $table->float('prix');
+            
             $table->string('cover_image');
+
+
             $table->timestamps();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
