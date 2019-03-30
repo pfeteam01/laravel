@@ -4,12 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class resetPassword, c'est la classe qui sert de modèle pour la table resetPassword
- * @package App
- */
-class resetPassword extends Model
+class ResetPassword extends Model
 {
-    protected $fillable = ['user_id','code'];
-	protected $table = 'resetpassword' ;
+    protected $fillable = ['id','user_id','code'];
+    protected $table = 'resetpassword' ;
+    public $timestamps = true ;
+    protected $primaryKey = 'id' ;
 }

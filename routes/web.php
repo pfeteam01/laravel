@@ -14,23 +14,35 @@ Route::get('/', function () {
     return view("welcome");
 });
 
-Route::get('/inscription','userController@afficherInscription');
-Route::post('/inscription','userController@creerUser');
-Route::get('/confirm/{id}/{token}','userController@confirmer');
+Route::get('/inscription','UserController@afficherInscription');
+Route::post('/inscription','UserController@creerUser');
+Route::get('/confirm/{id}/{token}','UserController@confirmer');
 
-Route::get('/connexion','authController@afficherConnexion');
-Route::post('/connexion','authController@connect');
+Route::get('/connexion','AuthController@afficherConnexion');
+Route::post('/connexion','AuthController@connect');
 
 Route::group([
     'middleware' => 'App\Http\Middleware\Authentification',
 ],function (){
-    Route::get('/profil','profilController@afficherProfil');
-    Route::get('/deconnexion','profilController@deconexion');
-    Route::get('/modifierprofil','profilController@afficherModifierProfil');
-    Route::post('/modifierprofil','profilController@traitementmodifprofil');
-    Route::get('/modifierprofil/supprimeravatar','profilController@supprimerAvatar');
+    Route::get('/profil','ProfilController@afficherProfil');
+    Route::get('/deconnexion','ProfilController@deconexion');
+    Route::get('/modifierprofil','ProfilController@afficherModifierProfil');
+    Route::post('/modifierprofil','ProfilController@traitementmodifprofil');
+    Route::get('/modifierprofil/supprimeravatar','ProfilController@supprimerAvatar');
 
-    Route::get('/creerannonce','annonceController@create');
+    Route::get('/creerannonce','AnnonceController@create');
+    Route::post('/save','AnnonceController@store');
+    Route::get('/save','AnnonceController@store');
+
+    Route::get('/edit/{id}', 'AnnonceController@afficherModifAnnonce');
+    Route::post('/supprimerimageannonce', 'AnnonceController@supprimerImageAnnonce');
+    Route::post('/update','AnnonceController@updateAnnonce');
+    Route::get('/update','AnnonceController@updateAnnonce');
+    Route::get('/changeetat/{id}','AnnonceController@changerEtat');
+    Route::get('/supprimerannonce/{id}','AnnonceController@supprimerAnnonce');
+    Route::get('/supprimeracteprop/{id}','AnnonceController@supprimerActeDeProp');
+
+    Route::get('/affichercarte','ProfilController@afficherLaCarte');
 });
 
 Route::get('/resetpasswordpart1','ResetPasswordController@afficherEnterMail');
@@ -40,16 +52,13 @@ Route::post('/verifcode','ResetPasswordController@resetPasswordVerifCode');
 Route::get('/resetpasswordpart3','ResetPasswordController@afficherChangerPassword');
 Route::post('/changerpassword','ResetPasswordController@resetPasswordChangerPassword');
 
-
-Route::resource('/Annonces','annonceController');
+Route::resource('/Annonces','AnnonceController');
 Route::get('/Annonces/{$id}/commander',function(){
     return view('annonce.commander{$id}');
 });
-Route::get('/Annonces/{$id}','annonceController@show');
+Route::get('/Annonces/{$id}','AnnonceController@show');
+Route::post('/Annonce/{id}/edit','AnnonceController@update') ;
 
 Route::get('/a propos',function (){
     return view('a propos');
 });
-
-
-

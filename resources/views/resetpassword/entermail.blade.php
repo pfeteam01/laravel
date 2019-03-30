@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app',['title'=>'Récupération de mot de passe'])
 @section('content')
     @if(count($errors) > 0)
         <div class="alert alert-danger">

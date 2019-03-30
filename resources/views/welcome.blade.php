@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app',['title'=>'Acceuil'])
 @section('content')
     <div class="flex-center position-ref full-height">
         <div class="content">
