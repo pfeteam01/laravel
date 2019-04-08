@@ -42,8 +42,18 @@ Route::group([
     Route::get('/supprimerannonce/{id}','AnnonceController@supprimerAnnonce');
     Route::get('/supprimeracteprop/{id}','AnnonceController@supprimerActeDeProp');
 
-    Route::get('/affichercarte','ProfilController@afficherLaCarte');
+    Route::get('/mesnotification','NotificationController@afficherNotifications');
+    Route::get('/chageetatnotification/{id}','NotificationController@changerEtatNotification');
+    Route::get('/supprimernotification/{id}','NotificationController@deleteNotification');
 });
+
+Route::get('/affichercarte','ProfilController@afficherLaCarte');
+Route::post('/find','AnnonceController@findAnnonce');
+Route::get('/find','AnnonceController@findAnnonce');
+Route::post('/afficherdetail','AnnonceController@showDetailsAnnonce');
+Route::get('/afficherdetail','AnnonceController@showDetailsAnnonce');
+Route::get('/commander','AnnonceController@commanderAnnonce');
+Route::post('/commander','AnnonceController@commanderAnnonce');
 
 Route::get('/resetpasswordpart1','ResetPasswordController@afficherEnterMail');
 Route::post('/resetpassword','ResetPasswordController@resetPasswordFindMail');
@@ -52,10 +62,9 @@ Route::post('/verifcode','ResetPasswordController@resetPasswordVerifCode');
 Route::get('/resetpasswordpart3','ResetPasswordController@afficherChangerPassword');
 Route::post('/changerpassword','ResetPasswordController@resetPasswordChangerPassword');
 
+
+
 Route::resource('/Annonces','AnnonceController');
-Route::get('/Annonces/{$id}/commander',function(){
-    return view('annonce.commander{$id}');
-});
 Route::get('/Annonces/{$id}','AnnonceController@show');
 Route::post('/Annonce/{id}/edit','AnnonceController@update') ;
 
