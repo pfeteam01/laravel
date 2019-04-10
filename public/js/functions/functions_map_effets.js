@@ -1,3 +1,4 @@
+var style = null ;
 function recupererItem(mymap,lat,lng) {
     var circle = null;
     mymap.eachLayer(function (layer) {
@@ -9,26 +10,34 @@ function recupererItem(mymap,lat,lng) {
     });
     return circle ;
 }
+
+function getOptions(marker) {
+    var oldOne = {
+        radius: marker.options.radius,
+        fillColor: marker.options.fillColor ,
+        color: marker.options.color,
+        weight: marker.options.weight ,
+        opacity: marker.options.opacity,
+        fillOpacity: marker.options.fillOpacity,
+    };
+    return oldOne ;
+}
+
 function activerMarker(element,mymap){
     var latitude = element.getAttribute('data-lat');
     var longitude = element.getAttribute('data-lng');
     var circleMarkerItem = recupererItem(mymap,latitude,longitude);
+    style = getOptions(circleMarkerItem);
     circleMarkerItem.setStyle({
         fillColor: "#3388ff",
         weight: 2,
         radius : 18
     });
 }
-function resetMarker(element,mymap) {
+
+function resetMarker(element,mymap,trouvinfav) {
     var latitude = element.getAttribute('data-lat');
     var longitude = element.getAttribute('data-lng');
     var circleMarkerItem = recupererItem(mymap,latitude,longitude);
-    circleMarkerItem.setStyle({
-        radius: 15,
-        fillColor: "#ff0097",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    });
+    circleMarkerItem.setStyle(style);
 }

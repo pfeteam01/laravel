@@ -45,6 +45,10 @@ Route::group([
     Route::get('/mesnotification','NotificationController@afficherNotifications');
     Route::get('/chageetatnotification/{id}','NotificationController@changerEtatNotification');
     Route::get('/supprimernotification/{id}','NotificationController@deleteNotification');
+
+    Route::get('/ajouterfavoris','FavorisController@addFavoris');
+    Route::post('/ajouterfavoris','FavorisController@addFavoris');
+    Route::get('/mesfavoris','FavorisController@afficherMesFavoris');
 });
 
 Route::get('/affichercarte','ProfilController@afficherLaCarte');

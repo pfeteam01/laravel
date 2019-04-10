@@ -104,7 +104,7 @@
                     </div>
                     <input type="submit" value="Envoyer">
                 </form>
-                <button type="button" class="btn btn-light"><span class="addremove"></span></button><br>
+                <button id="favoris" type="button" class="btn btn-light"><span class="addremove"></span></button><br>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -114,50 +114,92 @@
     </div>
 </div>
 <script>
-$('#myModal').on('hidden.bs.modal',function(){
-    $('#message').removeClass('is-invalid');
-    $('#mail').removeClass('is-invalid');
-    $('#tel').removeClass('is-invalid');
-});
-$('#commanderAnnonce').on('submit',function (e) {
-    e.preventDefault();
-    var fd = new FormData();
-    fd.append('id_annonce',myid);
-    fd.append('mail',$('#mail').val());
-    fd.append('tel',$('#tel').val());
-    fd.append('message',$('#message').val());
-    fd.append('_token','{{csrf_token()}}');
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
+    $('#myModal').on('hidden.bs.modal',function(){
+        $('#message').removeClass('is-invalid').val("");
+        $('#mail').removeClass('is-invalid').val("");
+        $('#tel').removeClass('is-invalid').val("");
+
     });
-    $.ajax({
-        url:"{{url('/commander')}}",
-        method:"POST",
-        data:fd,
-        contentType: false,
-        processData: false,
-        dataType:'JSON',
-        success:function(data) {
-            if (data.status == 'Success')
-                console.log(data.message);
-            else{
-                $.each(data.message, function(key,value){
-                    console.log(key+" "+value);
-                });
-                if (data.message.hasOwnProperty('message')){
-                    $('#message').addClass('is-invalid');
-                }
-                if (data.message.hasOwnProperty('mail')){
-                    $('#mail').addClass('is-invalid');
-                }
-                if(data.message.hasOwnProperty('tel')){
-                    $('#tel').addClass('is-invalid');
+    $('#commanderAnnonce').on('submit',function (e) {
+        e.preventDefault();
+        var fd = new FormData();
+        fd.append('id_annonce',myid);
+        fd.append('mail',$('#mail').val());
+        fd.append('tel',$('#tel').val());
+        fd.append('message',$('#message').val());
+        fd.append('_token','{{csrf_token()}}');
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url:"{{url('/commander')}}",
+            method:"POST",
+            data:fd,
+            contentType: false,
+            processData: false,
+            dataType:'JSON',
+            success:function(data) {
+                if (data.status == 'Success')
+                    console.log(data.message);
+                else{
+                    $.each(data.message, function(key,value){
+                        console.log(key+" "+value);
+                    });
+                    if (data.message.hasOwnProperty('message')){
+                        $('#message').addClass('is-invalid');
+                    }
+                    if (data.message.hasOwnProperty('mail')){
+                        $('#mail').addClass('is-invalid');
+                    }
+                    if(data.message.hasOwnProperty('tel')){
+                        $('#tel').addClass('is-invalid');
+                    }
                 }
             }
-        }
+        });
     });
-});
+    $('#favoris').on('click',function () {
+        var fd = new FormData();
+        fd.append('id_annonce',myid);
+        fd.append('_token','{{csrf_token()}}');
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url:"{{ url('/ajouterfavoris') }}",
+            method:"POST",
+            data:fd,
+            contentType: false,
+            processData: false,
+            dataType:'JSON',
+            success:function(data) {
+                $('.addremove').html(data.titreBouton);
+                var c = recupererItem(mymap,mylat,mylng);
+                if (data.status == 0){
+                    c.setStyle({
+                        radius: 15,
+                        fillColor: "#ff0097",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                }else{
+                    c.setStyle({
+                        radius: 15,
+                        fillColor: "#fff",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                }
+            }
+        });
+    });
 </script>
 @stop

@@ -180,17 +180,32 @@ $('.find').change(function(){
             $('#annonces').empty();
             var tab = [];
             var annonces = '';
-            for (var i = 0; i < data.annonce.length; i++) {
-                var circleMarkerAnnonce = L.circleMarker([data.annonce[i].lat, data.annonce[i].lng], {
-                    radius: 15,
-                    fillColor: "#ff0097",
-                    color: "#000",
-                    weight: 1,
-                    opacity: 1,
-                    fillOpacity: 0.8
-                });
+            for ( i = 0 ;i< data.annonce.length ; i++){
+                if (data.mesfavoris[i] == 0){
+                    var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
+                        radius: 15,
+                        fillColor: "#ff0097",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                    trouvInFav = 0 ;
+                }
+                else{
+                    var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
+                        radius: 15,
+                        fillColor: "#fff",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                    trouvInFav = 1 ;
+                }
+
                 var bounds = mymap.getBounds();
-                if (bounds.contains(circleMarkerAnnonce.getLatLng()) && data.annonce[i].etat == 1) {
+                if (bounds.contains(circleMarkerAnnonce.getLatLng()) && data.annonce[i].etat == 1){
                     tab.push(circleMarkerAnnonce);
                     var nom_image = null ;
                     if (data.image[i].length != 0)
@@ -203,7 +218,7 @@ $('.find').change(function(){
                         ' data-lat="'+data.annonce[i].lat+'" ' +
                         ' data-lng="'+data.annonce[i].lng+'" ' +
                         ' onmouseenter="activerMarker(this,mymap)" ' +
-                        ' onmouseleave="resetMarker(this,mymap)"' +
+                        ' onmouseleave="resetMarker(this,mymap,'+trouvInFav+')"' +
                         ' data-toggle="modal"' +
                         ' data-target="#myModal" ' +
                         ' onclick="showDetails('+data.annonce[i].id_annonce+');">'+

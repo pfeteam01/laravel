@@ -16,6 +16,7 @@ use App\Studio;
 use App\Terrain;
 use App\User;
 use App\Vente;
+use App\Favoris ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -815,18 +816,28 @@ class AnnonceController extends Controller
                         $resultFinal->push($a);
             }
         }
-
         $typeBien = collect([]);
         $typeBienObj = collect([]);
         $typeAction = collect([]);
         $typeActionObj = collect([]);
         $image = collect([]);
+        $trouvInFavoris = collect([]);
         foreach ($resultFinal as $item) {
             $typeBien->push($this->getTypeBien($item->id_annonce));
             $typeBienObj->push($this->getTypeBienObject($item->id_annonce));
             $typeAction->push($this->getTypeAction($item->id_annonce));
             $typeActionObj->push($this->getTypeActionObject($item->id_annonce));
             $image->push($this->getAnnonceImages($item->id_annonce));
+            if (auth()->check() == true){
+                $favoris = Favoris::where('annonce_id','=',$item->id_annonce)->where('user_id','=',auth()->user()->id_user)->first();
+                if ($favoris != null){
+                    $trouvInFavoris->push(1);
+                }else{
+                    $trouvInFavoris->push(0);
+                }
+            }else{
+                $trouvInFavoris->push(0);
+            }
         }
         return response()->json([
             'annonce' => $resultFinal ,
@@ -835,6 +846,7 @@ class AnnonceController extends Controller
             'typeaction' => $typeAction ,
             'typeactionobj' => $typeActionObj ,
             'image' => $image ,
+            'mesfavoris' => $trouvInFavoris,
         ]);
     }
 
@@ -846,6 +858,12 @@ class AnnonceController extends Controller
         $typeBien = $this->getTypeBien($id);
         $typeBienObj = $this->getTypeBienObject($id);
         $imageAnnonce = $this->getAnnonceImages($id);
+        $favoris = Favoris::where('annonce_id','=',$id)->where('user_id','=',auth()->user()->id_user)->first();
+        if ($favoris == null)
+            $titreBoutton = "Ajouter à mes favoris" ;
+        else{
+            $titreBoutton = 'Retirer de mes favoris';
+        }
         return response()->json([
             'annonce' => $annonce ,
             'typeaction' => $typeAction ,
@@ -853,6 +871,7 @@ class AnnonceController extends Controller
             'typebien' => $typeBien ,
             'typebienobj' => $typeBienObj ,
             'images' => $imageAnnonce ,
+            'titreBoutton' => $titreBoutton,
         ]);
     }
 
@@ -890,7 +909,6 @@ class AnnonceController extends Controller
             return response()->json([
                 'status' => 'Success',
                 'message' => 'Votre commande a bien été envoyé',
-                'message' => $image00,
             ]);
         }else{
             return response()->json([
@@ -899,15 +917,4 @@ class AnnonceController extends Controller
             ]);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 }

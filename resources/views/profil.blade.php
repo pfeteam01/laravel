@@ -15,6 +15,8 @@
         <br><br>
         <a href="{{url("/mesnotification")}}">Mes notifications</a>
         <br><br>
+        <a href="{{url("/mesfavoris")}}">Mes Favoris</a>
+        <br><br>
     @else
         <a href="{{ url("/inscription") }} ">Inscription</a>
         <a href="{{url('/connexion')}}">Connexion</a>
