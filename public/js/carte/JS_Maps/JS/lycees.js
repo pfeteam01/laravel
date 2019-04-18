@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var styleLycee = L.icon({
-    iconUrl : "js/carte/Images_Maps/lycee.svg",
+    iconUrl : "/js/carte/Images_Maps/lycee.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

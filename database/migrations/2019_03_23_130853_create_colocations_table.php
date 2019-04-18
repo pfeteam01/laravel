@@ -17,12 +17,12 @@ class CreateColocationsTable extends Migration
             $table->primary('id_colocation');
             $table->integer('id_colocation');
             $table->foreign('id_colocation')->references('id_annonce')->on('annonces');
-            $table->integer('loyer');
-            $table->integer('charge');
-            $table->integer('depot_de_garantie');
+            $table->bigInteger('loyer');
+            $table->bigInteger('charge');
+            $table->bigInteger('depot_de_garantie');
             $table->date('date_de_disponibilite');
-            $table->integer('duree_min')->nullable();
-            $table->integer('superficie_de_la_chambre');
+            $table->bigInteger('duree_min')->nullable();
+            $table->bigInteger('superficie_de_la_chambre');
             $table->integer('nombre_de_colocataires');
         });
     }

@@ -23,7 +23,7 @@ class CreateAnnoncesTable extends Migration
             $table->text('description');
             $table->float('lat',10,8);
             $table->float('lng',10,8);
-            $table->integer('superficie');
+            $table->bigInteger('superficie');
             $table->boolean('etat');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id_user')->on('users');

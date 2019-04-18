@@ -190,7 +190,6 @@ mymap.on('moveend',function () {
                         opacity: 1,
                         fillOpacity: 0.8
                     });
-                    trouvInFav = 0 ;
                 }
                 else{
                     var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
@@ -201,7 +200,6 @@ mymap.on('moveend',function () {
                         opacity: 1,
                         fillOpacity: 0.8
                     });
-                    trouvInFav = 1 ;
                 }
 
                 var bounds = mymap.getBounds();
@@ -218,7 +216,7 @@ mymap.on('moveend',function () {
                         ' data-lat="'+data.annonce[i].lat+'" ' +
                         ' data-lng="'+data.annonce[i].lng+'" ' +
                         ' onmouseenter="activerMarker(this,mymap)" ' +
-                        ' onmouseleave="resetMarker(this,mymap,'+trouvInFav+')"' +
+                        ' onmouseleave="resetMarker(this,mymap)"' +
                         ' data-toggle="modal"' +
                         ' data-target="#myModal" ' +
                         ' onclick="showDetails('+data.annonce[i].id_annonce+');">'+

@@ -49,6 +49,16 @@ Route::group([
     Route::get('/ajouterfavoris','FavorisController@addFavoris');
     Route::post('/ajouterfavoris','FavorisController@addFavoris');
     Route::get('/mesfavoris','FavorisController@afficherMesFavoris');
+
+    Route::get('/afficherajouteralerte','AlerteController@afficherAjouterAlerte');
+    Route::post('/ajouteralerte','AlerteController@addAlerte');
+
+    Route::get('/affichermodifalerte/{id}','AlerteController@afficherModifierAlerte');
+    Route::post('/modifieralerte/{id}','AlerteController@updateAlerte');
+    Route::get('/mesalertes/{id}','AlerteController@afficherMesAlertes');
+    Route::get('/changeretat/{id}','AlerteController@changerEtatAnnonce');
+    Route::get('/supprimeralerte/{id}','AlerteController@supprimerAnnonce');
+    Route::get('/voirannoncedealerte/{id}','AnnonceController@afficherAnnonceFromAlerte');
 });
 
 Route::get('/affichercarte','ProfilController@afficherLaCarte');

@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var stylePrimaire = L.icon({
-    iconUrl : "js/carte/Images_Maps/primaire.svg",
+    iconUrl : "/js/carte/Images_Maps/primaire.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

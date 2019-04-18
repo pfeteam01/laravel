@@ -1,6 +1,6 @@
 <div class="form-group">
     <input type="text" value="alger" class="form-control" id="recherche" placeholder="Rechercher une place" style="width: 350px;" ><br>
-    <a href="" class="btn btn-success">Rechercher</a>
+    <a id="rechercher-map" class="btn btn-success">Rechercher</a>
 </div>
 <div class="form-group">
     <input class="find" type="checkbox" id="vente" checked><label for="vente">Vente</label>
@@ -175,3 +175,9 @@
         <option value="all" selected>Toutes les dates</option>
     </select>
 </div>
+
+<script>
+    $('#rechercher-map').on('click',function () {
+        alert("rrrr");
+    });
+</script>

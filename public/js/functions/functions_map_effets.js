@@ -35,7 +35,7 @@ function activerMarker(element,mymap){
     });
 }
 
-function resetMarker(element,mymap,trouvinfav) {
+function resetMarker(element,mymap) {
     var latitude = element.getAttribute('data-lat');
     var longitude = element.getAttribute('data-lng');
     var circleMarkerItem = recupererItem(mymap,latitude,longitude);

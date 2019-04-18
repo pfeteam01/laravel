@@ -8,6 +8,7 @@ use App\Appartement;
 use App\Colocation;
 use App\Garage;
 use App\Location;
+use App\Mail\AlerteMail;
 use App\Mail\CommandeMail;
 use App\Maison;
 use App\Notification;
@@ -16,232 +17,132 @@ use App\Studio;
 use App\Terrain;
 use App\User;
 use App\Vente;
-use App\Favoris ;
+use App\Favoris;
+use App\ActionAlerte;
+use App\Alerte;
+use App\BienAlerte;
+use App\ChambreAlerte;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use logdb;
-use File;
+use phpDocumentor\Reflection\Types\Compound;
 
 /**
  * @package App\Http\Controllers
  */
 class AnnonceController extends Controller
 {
-    public function create(){
-        return view('annonce.create');
+    private function filterBien($typebien){
+        $resultat = collect([]);
+        $res = BienAlerte::where('nom_type_bien','=',$typebien)->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resultat->push($re->alerte_id);
+            }
+        }
+        return $resultat ;
     }
-
-    public function store(Request $request){
-        $rules = [
-            'titre' => '',
-            'wilaya' => '',
-            'description' => '',
-            'adresse' => '',
-            'mail' => '',
-            'tel' => '',
-            'superficie' => '',
-        ];
-        for ($i=0;$i<$request->len;$i++){
-            $rules += ['image'.$i => ''];
+    private function filterRomm($nbchambres){
+        $resultat = collect([]);
+        if ($nbchambres >= 8){
+            $res = ChambreAlerte::where('nb_chambres','>=',8)->get();
+        }else{
+            $res = ChambreAlerte::where('nb_chambres','=',$nbchambres)->get();
         }
-        if ($request->typeAction == 'vente'){
-            $rules += [
-                'prix' => ''
-            ];
-        }
-        elseif($request->typeAction == 'location'){
-            $rules += [
-                'loyer' => '',
-                'charge' => '',
-                'depotdegarantie' => '',
-                'datededisponibilite' => '',
-                'dureemin' => '',
-            ];
-        }
-        elseif($request->typeAction == 'colocation'){
-            $rules += [
-                'loyer' => '',
-                'charge' => '',
-                'depotdegarantie' => '',
-                'datededisponibilite' => '',
-                'dureemin' => '',
-                'superficiedelachambre' => '',
-                'nombrecolocataire' => '',
-            ];
-        }
-        if ($request->typeBien == 'appartement'){
-            $rules += [
-                'nbpiece' => '',
-                'nbchambre' => '',
-                'nbwc' => '',
-                'nbbains' => '',
-                'nbbalcons' => '',
-                'numetage' => '',
-                'meuble' => '',
-                'assenceur' => '',
-                'parking' => '',
-                'interphone' => '',
-            ];
-        }
-        elseif($request->typeBien == 'maison'){
-            $rules += [
-                'nbpiecemaison' => '',
-                'nbchambremaison' => '',
-                'nbwcmaison' => '',
-                'nbbainsmaison' => '',
-                'nbbalconsmaison' => '',
-                'nbetage' => '',
-                'meublemaison' => '',
-                'garagemaison' => '',
-                'jardinmaison' => '',
-            ];
-        }
-        elseif ($request->typeBien == 'studio'){
-            $rules += [
-                'numetagestudio' => '',
-                'meublestudio' => '' ,
-            ];
-        }
-        else if ($request->typeBien == 'terrain'){
-            $rules += [
-                'acteprop' => '',
-                'meubleterrain' => '' ,
-            ];
-        }
-        else if ($request->typeBien == 'garage'){
-            $rules += [
-            ] ;
-        }
-        $validate = Validator::make($request->all(),$rules);
-        if ($validate->passes() and $request->len<=7){
-            $annonce = new Annonce();
-            $annonce->titre = $request->titre;
-            $annonce->wilaya = $request->wilaya;
-            $annonce->adresse = $request->adresse ;
-            $annonce->mail = $request->mail;
-            $annonce->tel = $request->tel ;
-            $annonce->description = $request->description ;
-            $annonce->lat = $request->lat ;
-            $annonce->lng = $request->lng ;
-            $annonce->superficie = $request->superficie ;
-            $annonce->etat = 1 ;
-            $annonce->user_id = auth()->user()->id_user ;
-            $annonce->save();
-            $id =  Annonce::all()->max('id_annonce');
-            if ($request->typeAction == 'vente'){
-                $v = new Vente();
-                $v->id_vente = $id ;
-                $v->prix = $request->prix ;
-                $v->save();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resultat->push($re->alerte_id);
             }
-            elseif ($request->typeAction == 'location'){
-                $l = new \App\Location();
-                $l->id_location = $id ;
-                $l->loyer = $request->loyer ;
-                $l->charge = $request->charge ;
-                $l->depot_de_garantie = $request->depotdegarantie ;
-                $l->date_de_disponibilite = $request->datededisponibilite ;
-                $l->duree_min = $request->dureemin ;
-                $l->save();
-            }
-            elseif ($request->typeAction == 'colocation'){
-                $c = new Colocation();
-                $c->id_colocation = $id ;
-                $c->loyer = $request->loyer ;
-                $c->charge = $request->charge ;
-                $c->depot_de_garantie = $request->depotdegarantie ;
-                $c->date_de_disponibilite = $request->datededisponibilite ;
-                $c->duree_min = $request->dureemin ;
-                $c->superficie_de_la_chambre = $request->superficiedelachambre ;
-                $c->nombre_de_colocataires = $request->nombrecolocataire ;
-                $c->save();
-            }
-            if($request->typeBien == 'appartement'){
-                $a = new Appartement();
-                $a->id_appartement = $id ;
-                $a->nb_pieces = $request->nbpiece;
-                $a->nb_chambres = $request->nbchambre;
-                $a->nb_toilettes = $request->nbwc;
-                $a->nb_salles_de_bain = $request->nbbains;
-                $a->nb_balcons = $request->nbbalcons;
-                $a->num_etage = $request->numetage;
-                $a->meuble = $request->meuble;
-                $a->assenceur = $request->assenceur;
-                $a->parking = $request->parking;
-                $a->interphone = $request->interphone;
-                $a->save();
-            }
-            elseif ($request->typeBien == 'maison'){
-                $m = new Maison();
-                $m->id_maison = $id ;
-                $m->nb_pieces = $request->nbpiecemaison;
-                $m->nb_chambres = $request->nbchambremaison;
-                $m->nb_toilettes = $request->nbwcmaison;
-                $m->nb_salles_de_bain = $request->nbbainsmaison;
-                $m->nb_balcons = $request->nbbalconsmaison;
-                $m->nb_etage = $request->nbetage;
-                $m->meuble = $request->meublemaison;
-                $m->garage = $request->garagemaison;
-                $m->jardin = $request->jardinmaison;
-                $m->save();
-            }
-            elseif ($request->typeBien == 'studio'){
-                $s = new Studio();
-                $s->id_studio = $id ;
-                $s->num_etage = $request->numetagestudio;
-                $s->meuble = $request->meublestudio;
-                $s->save();
-            }
-            elseif ($request->typeBien == 'terrain'){
-                $t = new Terrain();
-                $t->id_terrain = $id ;
-                $acteDeProp = $request->file('acteprop');
-                if ($acteDeProp == null){
-                    $name = 'default_acte_de_prop.jpg';
-                }else{
-                    $name = $id.'_'.rand().'.'.$acteDeProp->getClientOriginalExtension();
-                    $acteDeProp->move(public_path('acte_de_prop'),$name);
-                }
-                $t->acte_prop = $name;
-                $t->permis_de_construction = $request->meubleterrain;
-                $t->save();
-            }
-            elseif ($request->typeBien == 'garage'){
-                $g = new Garage();
-                $g->id_garage = $id;
-                $g->save();
-            }
-            for ($i=0;$i<$request->len;$i++){
-                $img = $request->file('image'.$i);
-                $name = $id.'_'.rand().'.'.$img->getClientOriginalExtension();
-                $img->move(public_path('cover_img'),$name);
-                $imgAnnonce = new AnnonceImage();
-                $imgAnnonce->nom_image = $name ;
-                $imgAnnonce->annonce_id = $id ;
-                $imgAnnonce->save();
-            }
-            return response()->json([
-                'status' => 'Success',
-                'message' => 'Votre annonce a bien été inséré',
-            ]);
         }
-        else{
-            if ($request->len > 7)
-                $tab = [
-                    'status' => 'Errors',
-                    'message' => $validate->errors(),
-                    'info' => 'Le nombre d\'images ne doit pas dépasser 7 images',
-                ];
-            else
-                $tab = [
-                    'status' => 'Errors',
-                    'message' => $validate->errors(),
-                ];
-            return \response()->json($tab);
-        }
+        return $resultat ;
     }
-
+    private function filterAction($typeaction){
+        $resultat = collect([]);
+        $res = ActionAlerte::where('nom_type_action','=',$typeaction)->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resultat->push($re->alerte_id);
+            }
+        }
+        return $resultat ;
+    }
+    private function filterAnnonces($wilaya,$surface,$prix){
+        $resulat = collect([]);
+        $res = Alerte::
+        where('wilaya','=',$wilaya)
+            ->where('surface_min','<',$surface)
+            ->where('lp_min','<',$prix)
+            ->where('etat_alerte','=',1)
+            ->where('surface_max','>',$surface)
+            ->where('surface_max','!=',null)
+            ->where('lp_max','>',$prix)
+            ->where('lp_max','!=',null)
+            ->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resulat->push($re->id_alerte);
+            }
+        }
+        $res = Alerte::
+        where('wilaya','=',$wilaya)
+            ->where('surface_min','<',$surface)
+            ->where('lp_min','<',$prix)
+            ->where('etat_alerte','=',1)
+            ->where('surface_max','=',null)
+            ->where('lp_max','=',null)
+            ->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resulat->push($re->id_alerte);
+            }
+        }
+        return $resulat ;
+    }
+    private function findAlerte($wilaya,$surface,$prix,$typeaction,$typebien,$chambre){
+        $annonce = $this->filterBien($typebien);
+        if ($typebien == 'appartement' || $typebien == 'maison')
+            $annonce = $this->intersect($annonce,$this->filterRomm($chambre));
+        $annonce = $this->intersect($annonce,$this->filterAction($typeaction));
+        $annonce = $this->intersect($annonce,$this->filterAnnonces($wilaya,$surface,$prix));
+        return $annonce ;
+    }
+    private function intersect($array1, $array2){
+        $resultat = collect([]);
+        foreach ($array1 as $item) {
+            if ($array2->contains($item))
+                $resultat->push($item);
+        }
+        return $resultat ;
+    }
+    private function getSesBiens($id){
+        $resultat = collect([]);
+        $res = BienAlerte::where('alerte_id','=',$id)->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resultat->push($re->nom_type_bien);
+            }
+        }
+        return $resultat ;
+    }
+    private function getSesActions($id){
+        $resultat = collect([]);
+        $res = ActionAlerte::where('alerte_id','=',$id)->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resultat->push($re->nom_type_action);
+            }
+        }
+        return $resultat ;
+    }
+    private function getSesChambres($id){
+        $resultat = collect([]);
+        $res = ChambreAlerte::where('alerte_id','=',$id)->get();
+        if ($res != null){
+            foreach ($res as $re) {
+                $resultat->push($re->nb_chambres);
+            }
+        }
+        return $resultat ;
+    }
     private function getTypeBien($id){
         $trouv = Appartement::where('id_appartement',$id)->first();
         if ($trouv !== null){
@@ -348,28 +249,10 @@ class AnnonceController extends Controller
         return $tabImage ;
     }
 
-    public function afficherModifAnnonce($id){
-        $annonce = Annonce::where('id_annonce',$id)->first();
-        $typeBien = $this->getTypeBien($id);
-        $typeBienObjet = $this->getTypeBienObject($id);
-        $typeAction = $this->getTypeAction($id);
-        $typeActionObjet = $this->getTypeActionObject($id);
-        $tabAnnonceImage = $this->getAnnonceImages($id);
-        return view('annonce.modifier',compact('annonce','typeBien','typeBienObjet','typeAction','typeActionObjet','tabAnnonceImage'));
+    public function create(){
+        return view('annonce.create');
     }
-
-    public function supprimerImageAnnonce(Request $request){
-        $image = AnnonceImage::find($request->id);
-        $id_annonce = $image->annonce_id ;
-        $image->delete();
-        //Prochainemet retirer cette image de vrai
-        return response()->json([
-            'message' => 'Cette image a bien été supprimée',
-            'status' => 'Success',
-        ]);
-    }
-
-    public function updateAnnonce(Request $request){
+    public function store(Request $request){
         $rules = [
             'titre' => '',
             'wilaya' => '',
@@ -386,7 +269,8 @@ class AnnonceController extends Controller
             $rules += [
                 'prix' => ''
             ];
-        }elseif($request->typeAction == 'location'){
+        }
+        elseif($request->typeAction == 'location'){
             $rules += [
                 'loyer' => '',
                 'charge' => '',
@@ -394,7 +278,8 @@ class AnnonceController extends Controller
                 'datededisponibilite' => '',
                 'dureemin' => '',
             ];
-        }elseif($request->typeAction == 'colocation'){
+        }
+        elseif($request->typeAction == 'colocation'){
             $rules += [
                 'loyer' => '',
                 'charge' => '',
@@ -418,7 +303,8 @@ class AnnonceController extends Controller
                 'parking' => '',
                 'interphone' => '',
             ];
-        }elseif($request->typeBien == 'maison'){
+        }
+        elseif($request->typeBien == 'maison'){
             $rules += [
                 'nbpiecemaison' => '',
                 'nbchambremaison' => '',
@@ -430,17 +316,262 @@ class AnnonceController extends Controller
                 'garagemaison' => '',
                 'jardinmaison' => '',
             ];
-        }elseif ($request->typeBien == 'studio'){
+        }
+        elseif ($request->typeBien == 'studio'){
             $rules += [
                 'numetagestudio' => '',
                 'meublestudio' => '' ,
             ];
-        }else if ($request->typeBien == 'terrain'){
+        }
+        else if ($request->typeBien == 'terrain'){
             $rules += [
                 'acteprop' => '',
                 'meubleterrain' => '' ,
             ];
-        }else if ($request->typeBien == 'garage'){
+        }
+        else if ($request->typeBien == 'garage'){
+            $rules += [
+            ] ;
+        }
+
+        $validate = Validator::make($request->all(),$rules);
+
+        if ($validate->passes() and $request->len<=7){
+
+            $prixAlerte = 0 ;
+            $chambreAlerte = 0 ;
+
+            $annonce = new Annonce();
+            $annonce->titre = $request->titre;
+            $annonce->wilaya = ucfirst($request->wilaya);
+            $annonce->adresse = $request->adresse ;
+            $annonce->mail = $request->mail;
+            $annonce->tel = $request->tel ;
+            $annonce->description = $request->description ;
+            $annonce->lat = $request->lat ;
+            $annonce->lng = $request->lng ;
+            $annonce->superficie = $request->superficie ;
+            $annonce->etat = 1 ;
+            $annonce->user_id = auth()->user()->id_user ;
+            $annonce->save();
+            $id =  Annonce::all()->max('id_annonce');
+            if ($request->typeAction == 'vente'){
+                $v = new Vente();
+                $v->id_vente = $id ;
+                $v->prix = $request->prix ;
+                $v->save();
+                $prixAlerte = $request->prix ;
+            }
+            elseif ($request->typeAction == 'location'){
+                $l = new \App\Location();
+                $l->id_location = $id ;
+                $l->loyer = $request->loyer ;
+                $l->charge = $request->charge ;
+                $l->depot_de_garantie = $request->depotdegarantie ;
+                $l->date_de_disponibilite = $request->datededisponibilite ;
+                $l->duree_min = $request->dureemin ;
+                $l->save();
+                $prixAlerte = $request->loyer ;
+            }
+            elseif ($request->typeAction == 'colocation'){
+                $c = new Colocation();
+                $c->id_colocation = $id ;
+                $c->loyer = $request->loyer ;
+                $c->charge = $request->charge ;
+                $c->depot_de_garantie = $request->depotdegarantie ;
+                $c->date_de_disponibilite = $request->datededisponibilite ;
+                $c->duree_min = $request->dureemin ;
+                $c->superficie_de_la_chambre = $request->superficiedelachambre ;
+                $c->nombre_de_colocataires = $request->nombrecolocataire ;
+                $c->save();
+                $prixAlerte = $request->loyer ;
+            }
+            if($request->typeBien == 'appartement'){
+                $a = new Appartement();
+                $a->id_appartement = $id ;
+                $a->nb_pieces = $request->nbpiece ;
+                $a->nb_chambres = $request->nbchambre ;
+                $a->nb_toilettes = $request->nbwc;
+                $a->nb_salles_de_bain = $request->nbbains;
+                $a->nb_balcons = $request->nbbalcons;
+                $a->num_etage = $request->numetage;
+                $a->meuble = $request->meuble;
+                $a->assenceur = $request->assenceur;
+                $a->parking = $request->parking;
+                $a->interphone = $request->interphone;
+                $a->save();
+                $chambreAlerte = $request->nbpiece ;
+            }
+            elseif ($request->typeBien == 'maison'){
+                $m = new Maison();
+                $m->id_maison = $id ;
+                $m->nb_pieces = $request->nbpiecemaison;
+                $m->nb_chambres = $request->nbchambremaison;
+                $m->nb_toilettes = $request->nbwcmaison;
+                $m->nb_salles_de_bain = $request->nbbainsmaison;
+                $m->nb_balcons = $request->nbbalconsmaison;
+                $m->nb_etage = $request->nbetage;
+                $m->meuble = $request->meublemaison;
+                $m->garage = $request->garagemaison;
+                $m->jardin = $request->jardinmaison;
+                $m->save();
+                $chambreAlerte = $request->nbpiecemaison ;
+            }
+            elseif ($request->typeBien == 'studio'){
+                $s = new Studio();
+                $s->id_studio = $id ;
+                $s->num_etage = $request->numetagestudio;
+                $s->meuble = $request->meublestudio;
+                $s->save();
+                $chambreAlerte = 0 ;
+            }
+            elseif ($request->typeBien == 'terrain'){
+                $t = new Terrain();
+                $t->id_terrain = $id ;
+                $acteDeProp = $request->file('acteprop');
+                if ($acteDeProp == null){
+                    $name = 'default_acte_de_prop.jpg';
+                }else{
+                    $name = $id.'_'.rand().'.'.$acteDeProp->getClientOriginalExtension();
+                    $acteDeProp->move(public_path('acte_de_prop'),$name);
+                }
+                $t->acte_prop = $name;
+                $t->permis_de_construction = $request->meubleterrain;
+                $t->save();
+                $chambreAlerte = 0 ;
+            }
+            elseif ($request->typeBien == 'garage'){
+                $g = new Garage();
+                $g->id_garage = $id;
+                $g->save();
+                $chambreAlerte = 0 ;
+            }
+            for ($i=0;$i<$request->len;$i++){
+                $img = $request->file('image'.$i);
+                $name = $id.'_'.rand().'.'.$img->getClientOriginalExtension();
+                $img->move(public_path('cover_img'),$name);
+                $imgAnnonce = new AnnonceImage();
+                $imgAnnonce->nom_image = $name ;
+                $imgAnnonce->annonce_id = $id ;
+                $imgAnnonce->save();
+            }
+            $resFinal = $this->findAlerte($request->wilaya,$request->superficie,$prixAlerte,$request->typeAction,$request->typeBien,$chambreAlerte);
+            if ($resFinal->count() != 0){
+                foreach ($resFinal as $item) {
+                    $alerte = Alerte::where('id_alerte','=',$item)->first();
+                    \Mail::to($alerte->mail)->send(new AlerteMail($alerte,$this->getSesBiens($item),$this->getSesActions($item),$this->getSesChambres($item),$id));
+                }
+            }
+            return response()->json([
+                'status' => 'Success',
+                'message' => 'Votre annonce a bien été inséré',
+            ]);
+        }
+        else{
+            if ($request->len > 7)
+                $tab = [
+                    'status' => 'Errors',
+                    'message' => $validate->errors(),
+                    'info' => 'Le nombre d\'images ne doit pas dépasser 7 images',
+                ];
+            else
+                $tab = [
+                    'status' => 'Errors',
+                    'message' => $validate->errors(),
+                ];
+            return \response()->json($tab);
+        }
+    }
+
+    public function afficherModifAnnonce($id){
+        $annonce = Annonce::where('id_annonce',$id)->first();
+        $typeBien = $this->getTypeBien($id);
+        $typeBienObjet = $this->getTypeBienObject($id);
+        $typeAction = $this->getTypeAction($id);
+        $typeActionObjet = $this->getTypeActionObject($id);
+        $tabAnnonceImage = $this->getAnnonceImages($id);
+        return view('annonce.modifier',compact('annonce','typeBien','typeBienObjet','typeAction','typeActionObjet','tabAnnonceImage'));
+    }
+    public function updateAnnonce(Request $request){
+        $rules = [
+            'titre' => '',
+            'wilaya' => '',
+            'description' => '',
+            'adresse' => '',
+            'mail' => '',
+            'tel' => '',
+            'superficie' => '',
+        ];
+        for ($i=0;$i<$request->len;$i++){
+            $rules += ['image'.$i => ''];
+        }
+
+        if ($request->typeAction == 'vente'){
+            $rules += [
+                'prix' => ''
+            ];
+        }
+        elseif($request->typeAction == 'location'){
+            $rules += [
+                'loyer' => '',
+                'charge' => '',
+                'depotdegarantie' => '',
+                'datededisponibilite' => '',
+                'dureemin' => '',
+            ];
+        }
+        elseif($request->typeAction == 'colocation'){
+            $rules += [
+                'loyer' => '',
+                'charge' => '',
+                'depotdegarantie' => '',
+                'datededisponibilite' => '',
+                'dureemin' => '',
+                'superficiedelachambre' => '',
+                'nombrecolocataire' => '',
+            ];
+        }
+
+        if ($request->typeBien == 'appartement'){
+            $rules += [
+                'nbpiece' => '',
+                'nbchambre' => '',
+                'nbwc' => '',
+                'nbbains' => '',
+                'nbbalcons' => '',
+                'numetage' => '',
+                'meuble' => '',
+                'assenceur' => '',
+                'parking' => '',
+                'interphone' => '',
+            ];
+        }
+        elseif($request->typeBien == 'maison'){
+            $rules += [
+                'nbpiecemaison' => '',
+                'nbchambremaison' => '',
+                'nbwcmaison' => '',
+                'nbbainsmaison' => '',
+                'nbbalconsmaison' => '',
+                'nbetage' => '',
+                'meublemaison' => '',
+                'garagemaison' => '',
+                'jardinmaison' => '',
+            ];
+        }
+        elseif ($request->typeBien == 'studio'){
+            $rules += [
+                'numetagestudio' => '',
+                'meublestudio' => '' ,
+            ];
+        }
+        else if ($request->typeBien == 'terrain'){
+            $rules += [
+                'acteprop' => '',
+                'meubleterrain' => '' ,
+            ];
+        }
+        else if ($request->typeBien == 'garage'){
             $rules += [] ;
         }
 
@@ -448,6 +579,10 @@ class AnnonceController extends Controller
         $ln = $tabAnnonceImage->count();
         $validate = Validator::make($request->all(),$rules);
         if ($validate->passes() and $ln+$request->len<=7){
+
+            $prixAlerte = 0 ;
+            $chambreAlerte = 0 ;
+
             $annonce = Annonce::find($request->id_annonce);
             $annonce->titre = $request->titre;
             $annonce->wilaya = $request->wilaya;
@@ -464,12 +599,14 @@ class AnnonceController extends Controller
             if ($typeAction == $request->typeAction){
                 if ($typeAction == 'vente'){
                     $typeActionObjet->prix = $request->prix ;
+                    $prixAlerte = $request->prix ;
                 }elseif ($typeAction == 'location'){
                     $typeActionObjet->loyer = $request->loyer ;
                     $typeActionObjet->charge = $request->charge ;
                     $typeActionObjet->depot_de_garantie = $request->depotdegarantie ;
                     $typeActionObjet->date_de_disponibilite = $request->datededisponibilite ;
                     $typeActionObjet->duree_min = $request->dureemin ;
+                    $prixAlerte = $request->loyer ;
                 }elseif ($typeAction == 'colocation'){
                     $typeActionObjet->loyer = $request->loyer ;
                     $typeActionObjet->charge = $request->charge ;
@@ -478,6 +615,7 @@ class AnnonceController extends Controller
                     $typeActionObjet->duree_min = $request->dureemin ;
                     $typeActionObjet->superficie_de_la_chambre = $request->superficiedelachambre ;
                     $typeActionObjet->nombre_de_colocataires = $request->nombrecolocataire ;
+                    $prixAlerte = $request->loyer ;
                 }
                 $typeActionObjet->save();
             }
@@ -487,6 +625,7 @@ class AnnonceController extends Controller
                     $v->id_vente = $request->id_annonce ;
                     $v->prix = $request->prix ;
                     $v->save();
+                    $prixAlerte = $request->prix ;
                 }elseif ($request->typeAction == 'location'){
                     $l = new Location();
                     $l->id_location = $request->id_annonce ;
@@ -496,6 +635,7 @@ class AnnonceController extends Controller
                     $l->date_de_disponibilite = $request->datededisponibilite ;
                     $l->duree_min = $request->dureemin ;
                     $l->save();
+                    $prixAlerte = $request->loyer ;
                 }elseif ($request->typeAction == 'colocation'){
                     $c = new Colocation();
                     $c->id_colocation = $request->id_annonce ;
@@ -507,6 +647,7 @@ class AnnonceController extends Controller
                     $c->superficie_de_la_chambre = $request->superficiedelachambre ;
                     $c->nombre_de_colocataires = $request->nombrecolocataire ;
                     $c->save();
+                    $prixAlerte = $request->loyer ;
                 }
                 $typeActionObjet->delete();
             }
@@ -524,6 +665,7 @@ class AnnonceController extends Controller
                     $typeBienObjet->assenceur = $request->assenceur;
                     $typeBienObjet->parking = $request->parking;
                     $typeBienObjet->interphone = $request->interphone;
+                    $chambreAlerte = $request->nbchambre ;
                 }elseif ($typeBien == 'maison'){
                     $typeBienObjet->nb_pieces = $request->nbpiecemaison;
                     $typeBienObjet->nb_chambres = $request->nbchambremaison;
@@ -534,6 +676,7 @@ class AnnonceController extends Controller
                     $typeBienObjet->meuble = $request->meublemaison;
                     $typeBienObjet->garage = $request->garagemaison;
                     $typeBienObjet->jardin = $request->jardinmaison;
+                    $chambreAlerte = $request->nbchambremaison;
                 }elseif ($typeBien == 'studio'){
                     $typeBienObjet->num_etage = $request->numetagestudio;
                     $typeBienObjet->meuble = $request->meublestudio;
@@ -566,6 +709,7 @@ class AnnonceController extends Controller
                     $a->parking = $request->parking;
                     $a->interphone = $request->interphone;
                     $a->save();
+                    $chambreAlerte = $request->nbpiece;
                 }
                 elseif ($request->typeBien == 'maison'){
                     $m = new Maison();
@@ -580,6 +724,7 @@ class AnnonceController extends Controller
                     $m->garage = $request->garagemaison;
                     $m->jardin = $request->jardinmaison;
                     $m->save();
+                    $chambreAlerte = $request->nbpiecemaison;
                 }
                 elseif ($request->typeBien == 'studio'){
                     $s = new Studio();
@@ -618,6 +763,13 @@ class AnnonceController extends Controller
                 $imgAnnonce->annonce_id = $request->id_annonce ;
                 $imgAnnonce->save();
             }
+            $resFinal = $this->findAlerte($request->wilaya,$request->superficie,$prixAlerte,$request->typeAction,$request->typeBien,$chambreAlerte);
+            if ($resFinal->count() != 0){
+                foreach ($resFinal as $item) {
+                    $alerte = Alerte::where('id_alerte','=',$item)->first();
+                    \Mail::to($alerte->mail)->send(new AlerteMail($alerte,$this->getSesBiens($item),$this->getSesActions($item),$this->getSesChambres($item)),$request->id_annonce);
+                }
+            }
             return response()->json([
                 'status' => 'Success',
                 'message' => 'Votre annonce a bien été modifier',
@@ -638,17 +790,47 @@ class AnnonceController extends Controller
             return \response()->json($tab);
         }
     }
-
+    public function supprimerImageAnnonce(Request $request){
+        $image = AnnonceImage::find($request->id);
+        $id_annonce = $image->annonce_id ;
+        $image->delete();
+        //Prochainemet retirer cette image de vrai
+        return response()->json([
+            'message' => 'Cette image a bien été supprimée',
+            'status' => 'Success',
+        ]);
+    }
     public function changerEtat($id){
-        $annonce = Annonce::find($id);
+        $annonce = Annonce::where('id_annonce','=',$id)->first();
         if($annonce->etat == 0)
             $annonce->etat = 1 ;
         else
             $annonce->etat = 0 ;
         $annonce->save();
+        $typeAction = $this->getTypeAction($id);
+        $typeActionObj = $this->getTypeActionObject($id);
+        if ($typeAction == 'vente'){
+            $prixAlerte = $typeActionObj->prix ;
+        }
+        elseif ($typeAction == 'location' || $typeAction == 'colocation'){
+            $prixAlerte = $typeActionObj->loyer ;
+        }
+        $typeBien = $this->getTypeBien($id);
+        $typeBienObj = $this->getTypeBienObject($id);
+        if ($typeBien == 'appartement' || $typeBien == 'maison'){
+            $chambreAlerte = $typeBienObj->nb_pieces ;
+        }else
+            $chambreAlerte = 0 ;
+
+        $resFinal = $this->findAlerte($annonce->wilaya,$annonce->superficie,$prixAlerte,$typeAction,$typeBien,$chambreAlerte);
+        if ($resFinal->count() != 0){
+            foreach ($resFinal as $item) {
+                $alerte = Alerte::where('id_alerte','=',$item)->first();
+                \Mail::to($alerte->mail)->send(new AlerteMail($alerte,$this->getSesBiens($item),$this->getSesActions($item),$this->getSesChambres($item)),$id);
+            }
+        }
         return back()->withInput();
     }
-
     public function supprimerAnnonce($id){
         $annonce = Annonce::find($id);
         $typeActionObject = $this->getTypeActionObject($id);
@@ -661,7 +843,6 @@ class AnnonceController extends Controller
         //Les supprimer reelement
         return redirect('/profil');
     }
-
     public function supprimerActeDeProp($id){
         $typeBien = $this->getTypeBienObject($id);
         if ($typeBien){
@@ -849,7 +1030,6 @@ class AnnonceController extends Controller
             'mesfavoris' => $trouvInFavoris,
         ]);
     }
-
     public function showDetailsAnnonce(Request $request){
         $id = $request->id ;
         $annonce = Annonce::where('id_annonce','=',$id)->first();
@@ -874,7 +1054,6 @@ class AnnonceController extends Controller
             'titreBoutton' => $titreBoutton,
         ]);
     }
-
     public function commanderAnnonce(Request $request){
         $rules = [
             'mail' => 'required',
@@ -916,5 +1095,15 @@ class AnnonceController extends Controller
                 'message' => $validator->errors(),
             ]);
         }
+    }
+
+    public function afficherAnnonceFromAlerte($id){
+        $ann = Annonce::where('id_annonce','=',$id)->get();
+        $typeBien = $this->getTypeBien($id);
+        $typeBienObj = $this->getTypeBienObject($id);
+        $typeAction = $this->getTypeAction($id);
+        $typeActionObj = $this->getTypeActionObject($id);
+        $images = $this->getAnnonceImages($id);
+        return view('alertes.details_annonce_alerte',compact('ann','typeBien','typeBienObj','typeAction','typeActionObj','images'));
     }
 }
