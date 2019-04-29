@@ -17,10 +17,18 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        switch ($guard){
+            case 'agence':
+                if (Auth::guard($guard)->check()){
+                    return redirect('/profilAgence')->withErrors('Chère agence, vous devez etre deconnétée afin de pouvoir voir cette page');
+                }
+                break;
+            default:
+                if (Auth::guard($guard)->check()){
+                    return redirect('/profil')->withErrors('Chère utilisateur, vous devez etre deconnétée afin de pouvoir voir cette page');
+                }
+                break;
         }
-
         return $next($request);
     }
 }

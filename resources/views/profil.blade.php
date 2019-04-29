@@ -17,6 +17,8 @@
         <br><br>
         <a href="{{url("/mesfavoris")}}">Mes Favoris</a>
         <br><br>
+        <a href="{{url("/mesalertes/".auth()->user()->id_user)}}">Mes Alertes</a>
+        <br><br>
     @else
         <a href="{{ url("/inscription") }} ">Inscription</a>
         <a href="{{url('/connexion')}}">Connexion</a>

@@ -65,7 +65,6 @@ mymap.on("move",function(){
         mymap.addLayer(layerGroupLycee);
     }
     tab = tabMarkerNotPrecision(mymap,metro);
-    console.log(tab);
     LayerGroupMetro = L.layerGroup(tab);
     if(document.getElementById("met").checked){
         mymap.addLayer(LayerGroupMetro);

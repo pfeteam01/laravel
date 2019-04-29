@@ -159,7 +159,6 @@ $(document).ready(function() {
     else
         datevar = parseInt(date);
     fd.append('datedepublication',datevar);
-    fd.append('_token','{{csrf_token()}}');
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -173,12 +172,7 @@ $(document).ready(function() {
         processData: false,
         dataType:'JSON',
         success:function(data) {
-            console.log(data.mesfavoris);
-            var i = 0 ;
-            var annonces =  '';
-            var tab = [];
-            var trouvInFav = null ;
-            console.log(data.image);
+            var i = 0 ; var annonces =  ''; var tab = [];
             for ( i = 0 ;i< data.annonce.length ; i++){
                 if (data.mesfavoris[i] == 0){
                     var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
@@ -189,7 +183,6 @@ $(document).ready(function() {
                         opacity: 1,
                         fillOpacity: 0.8
                     });
-                    trouvInFav = 0 ;
                 }
                 else{
                     var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
@@ -200,9 +193,7 @@ $(document).ready(function() {
                         opacity: 1,
                         fillOpacity: 0.8
                     });
-                    trouvInFav = 1 ;
                 }
-
                 var bounds = mymap.getBounds();
                 if (bounds.contains(circleMarkerAnnonce.getLatLng()) && data.annonce[i].etat == 1){
                     tab.push(circleMarkerAnnonce);
@@ -216,8 +207,9 @@ $(document).ready(function() {
                         ' style="background-color: #1b1e21; width: 300px; height: 400px; color: white" ' +
                         ' data-lat="'+data.annonce[i].lat+'" ' +
                         ' data-lng="'+data.annonce[i].lng+'" ' +
+                        ' data-id="'+data.annonce[i].id_annonce+'" ' +
                         ' onmouseenter="activerMarker(this,mymap)" ' +
-                        ' onmouseleave="resetMarker(this,mymap,'+trouvInFav+')"' +
+                        ' onmouseleave="resetMarker(this,mymap)"' +
                         ' data-toggle="modal"' +
                         ' data-target="#myModal" ' +
                         ' onclick="showDetails('+data.annonce[i].id_annonce+');">'+
@@ -228,7 +220,6 @@ $(document).ready(function() {
                         data.typeaction[i]+'<br>'+
                         '</div>' +
                         '<br/>';
-                    //Il faut pas oublier de personaliser cette grille de div et d'ajouter les infos tirées des autres tableaux.
                 }
             }
             var lg = new L.LayerGroup(tab);
@@ -236,6 +227,18 @@ $(document).ready(function() {
             if (tab.length == 0 )
                 annonces = 'Nothing to show ...' ;
             document.getElementById('annonces').innerHTML = annonces;
+            lg.eachLayer(function (layer) {
+                if (layer instanceof L.CircleMarker){
+                    layer.on('click',function () {
+                        var lat = layer.getLatLng().lat ;
+                        var lng = layer.getLatLng().lng ;
+                        var maDiv = $('div[data-lat="'+lat+'"]');
+                        var id_annonce = maDiv.attr('data-id');
+                        showDetails(id_annonce);
+                        $('#myModal').modal();
+                    });
+                }
+            });
         }
     });
 });

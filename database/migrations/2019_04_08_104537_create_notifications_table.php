@@ -17,9 +17,8 @@ class CreateNotificationsTable extends Migration
             $table->increments('id_notification');
             $table->integer('annonce_id');
             $table->foreign('annonce_id')->references('id_annonce')->on('annonces');
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id_user')->on('users');
             $table->boolean('etat')->default(0);
+            $table->string('texte',255);
             $table->timestamps();
         });
     }

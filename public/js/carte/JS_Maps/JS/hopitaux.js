@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var styleHop = L.icon({
-    iconUrl : "js/carte/Images_Maps/hospital.svg",
+    iconUrl : "/js/carte/Images_Maps/hospital.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

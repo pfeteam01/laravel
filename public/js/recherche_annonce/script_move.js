@@ -180,7 +180,7 @@ mymap.on('moveend',function () {
             var tab = [] ;
             $('#annonces').empty();
             var annonces = '' ;
-            for ( i = 0 ;i< data.annonce.length ; i++){
+            for (var  i = 0 ;i< data.annonce.length ; i++){
                 if (data.mesfavoris[i] == 0){
                     var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
                         radius: 15,
@@ -190,7 +190,6 @@ mymap.on('moveend',function () {
                         opacity: 1,
                         fillOpacity: 0.8
                     });
-                    trouvInFav = 0 ;
                 }
                 else{
                     var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {
@@ -201,11 +200,9 @@ mymap.on('moveend',function () {
                         opacity: 1,
                         fillOpacity: 0.8
                     });
-                    trouvInFav = 1 ;
                 }
-
                 var bounds = mymap.getBounds();
-                if (bounds.contains(circleMarkerAnnonce.getLatLng()) && data.annonce[i].etat == 1){
+                if (bounds.contains(circleMarkerAnnonce.getLatLng()) && data.annonce[i].etat == 1) {
                     tab.push(circleMarkerAnnonce);
                     var nom_image = null ;
                     if (data.image[i].length != 0)
@@ -217,8 +214,9 @@ mymap.on('moveend',function () {
                         ' style="background-color: #1b1e21; width: 300px; height: 400px; color: white" ' +
                         ' data-lat="'+data.annonce[i].lat+'" ' +
                         ' data-lng="'+data.annonce[i].lng+'" ' +
+                        ' data-id="'+data.annonce[i].id_annonce+'" ' +
                         ' onmouseenter="activerMarker(this,mymap)" ' +
-                        ' onmouseleave="resetMarker(this,mymap,'+trouvInFav+')"' +
+                        ' onmouseleave="resetMarker(this,mymap)"' +
                         ' data-toggle="modal"' +
                         ' data-target="#myModal" ' +
                         ' onclick="showDetails('+data.annonce[i].id_annonce+');">'+
@@ -229,7 +227,6 @@ mymap.on('moveend',function () {
                         data.typeaction[i]+'<br>'+
                         '</div>' +
                         '<br/>';
-                    //Il faut pas oublier de personaliser cette grille de div et d'ajouter les infos tirées des autres tableaux.
                 }
             }
             var lg = new L.LayerGroup(tab);
@@ -237,6 +234,18 @@ mymap.on('moveend',function () {
             if (tab.length == 0)
                 annonces = 'Nothing to show ...';
             document.getElementById('annonces').innerHTML = annonces;
+            lg.eachLayer(function (layer) {
+                if (layer instanceof L.CircleMarker){
+                    layer.on('click',function () {
+                        var lat = layer.getLatLng().lat ;
+                        var lng = layer.getLatLng().lng ;
+                        var maDiv = $('div[data-lat="'+lat+'"]');
+                        var id_annonce = maDiv.attr('data-id');
+                        showDetails(id_annonce);
+                        $('#myModal').modal();
+                    });
+                }
+            });
         }
     });
 });

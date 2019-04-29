@@ -39,7 +39,7 @@ class ResetPasswordController extends Controller
             if ($dejamodif){
                 $dejamodif->code = $code ;
                 $dejamodif->save();
-                \Mail::to($user->email)->send(new ResetPasswordMail($dejamodif));
+                \Mail::to($user->mail)->send(new ResetPasswordMail($dejamodif));
             }else{
                 $resetpass = new resetPassword();
                 $resetpass->user_id = $user->id_user;

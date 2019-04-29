@@ -1,4 +1,5 @@
 var style = null ;
+
 function recupererItem(mymap,lat,lng) {
     var circle = null;
     mymap.eachLayer(function (layer) {
@@ -35,7 +36,7 @@ function activerMarker(element,mymap){
     });
 }
 
-function resetMarker(element,mymap,trouvinfav) {
+function resetMarker(element,mymap) {
     var latitude = element.getAttribute('data-lat');
     var longitude = element.getAttribute('data-lng');
     var circleMarkerItem = recupererItem(mymap,latitude,longitude);

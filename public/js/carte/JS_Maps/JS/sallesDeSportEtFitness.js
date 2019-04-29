@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var styleSport = L.icon({
-    iconUrl : "js/carte/Images_Maps/sportetfitness.svg",
+    iconUrl : "/js/carte/Images_Maps/sportetfitness.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

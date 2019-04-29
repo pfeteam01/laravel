@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var styleCafe = L.icon({
-    iconUrl : "js/carte/Images_Maps/cafe.svg",
+    iconUrl : "/js/carte/Images_Maps/cafe.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

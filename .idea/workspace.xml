@@ -2,15 +2,141 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dde07321-3235-4f86-99b4-b329ff4227b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/favoris.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordAgenceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/agence/edit_profile_agence.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/agence/login_agence.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/agence/profile_agence.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/agence/register_agence.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alertes/afficher_mes_alertes.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alertes/ajouter_alerte.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alertes/details_annonce_alerte.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alertes/modif_alerte.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/alerte_notify.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/register_agence_mail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/reset_password_agence_mail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_load_files_script_filter_map.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/resetpasswordagence/changerpassword.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/resetpasswordagence/confirmcode.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/resetpasswordagence/entermail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Annonce.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserLoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authentification.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/CommandeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/CommandeMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_124137_create_annonces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_124137_create_annonces_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_130531_create_ventes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_130531_create_ventes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_130823_create_locations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_130823_create_locations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_130853_create_colocations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_130853_create_colocations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/19_1079508702.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/20_718970664.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/22_902154870.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/32_1027498643.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/32_552375808.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/12_1581268815.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/12_170946663.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/12_1745785450.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/12_1869725955.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/15_1307263406.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/15_1710160339.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/15_2048915613.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/19_1310257374.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/19_1422477634.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/19_2008034971.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/19_663516757.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/19_820337982.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/20_1171512006.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/20_1603242382.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/20_1795636276.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/20_650089097.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/21_2033865490.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/21_939694978.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/26_963963561.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1351010643.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1406198174.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1546092682.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1745533247.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/27_816542725.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/28_1608202653.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/29_1073219418.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/29_1073404094.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/29_1671094888.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/29_19143466.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/29_391578913.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/30_799140336.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/30_974879199.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_1521989289.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_1646182906.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_498998679.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_658510451.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_751268982.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_846562286.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/33_991505739.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/8_1084077315.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/8_1483805877.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/8_1853373314.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/8_980051458.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/9_121516951.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/9_1751167323.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/9_1998377830.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover_img/9_34066040.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/alimentationsEtSuperMarches.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/alimentationsEtSuperMarches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/banques.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/banques.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bibliothequesEtCentresDeCulture.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bibliothequesEtCentresDeCulture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boucheries.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boucheries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boulangeriesEtPatesseries.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boulangeriesEtPatesseries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bus.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cafeteria.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cafeteria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cem.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/centresCommerciaux.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/centresCommerciaux.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/fastFoosEtRestaurants.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/fastFoosEtRestaurants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/hopitaux.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/hopitaux.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/librairies.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/librairies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/lycees.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/lycees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/metro.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/metro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/mosquees.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/mosquees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/musees.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/musees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/pharmacies.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/pharmacies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/piscines.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/piscines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/postes.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/postes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/primaires.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/primaires.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/sallesDeSportEtFitness.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/sallesDeSportEtFitness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/shopping.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/shopping.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/taxis.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/taxis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/trains.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/trains.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/tramway.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/tramway.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/universite.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/universite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/eventMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/eventMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/functions/functions_carte.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/functions/functions_carte.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/functions/functions_map_effets.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/functions/functions_map_effets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/script_change.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/script_change.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/script_move.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/script_move.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/a propos.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/annonce/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annonce/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/annonce/modifier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annonce/modifier.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/carte.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/carte.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/commander.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/commander.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/resetpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/resetpassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/favoris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/favoris.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_carte.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_form_de_recherche.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_form_de_recherche.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notifications.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -23,14 +149,29 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2106189036">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="29" />
+          <entry key="project.closed" value="43" />
           <entry key="project.open.time.102" value="1" />
           <entry key="project.open.time.103" value="1" />
           <entry key="project.open.time.104" value="1" />
+          <entry key="project.open.time.109" value="1" />
           <entry key="project.open.time.112" value="1" />
           <entry key="project.open.time.113" value="1" />
           <entry key="project.open.time.114" value="1" />
@@ -38,78 +179,94 @@
           <entry key="project.open.time.117" value="1" />
           <entry key="project.open.time.123" value="1" />
           <entry key="project.open.time.126" value="1" />
-          <entry key="project.open.time.139" value="1" />
+          <entry key="project.open.time.137" value="1" />
+          <entry key="project.open.time.139" value="2" />
+          <entry key="project.open.time.145" value="1" />
           <entry key="project.open.time.160" value="1" />
+          <entry key="project.open.time.162" value="1" />
+          <entry key="project.open.time.173" value="1" />
+          <entry key="project.open.time.177" value="1" />
+          <entry key="project.open.time.178" value="1" />
+          <entry key="project.open.time.203" value="1" />
           <entry key="project.open.time.239" value="1" />
           <entry key="project.open.time.249" value="1" />
           <entry key="project.open.time.283" value="1" />
           <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.491" value="1" />
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.70" value="1" />
-          <entry key="project.open.time.71" value="1" />
+          <entry key="project.open.time.71" value="2" />
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.76" value="2" />
           <entry key="project.open.time.77" value="1" />
-          <entry key="project.open.time.79" value="1" />
+          <entry key="project.open.time.79" value="2" />
+          <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.85" value="1" />
           <entry key="project.open.time.89" value="1" />
+          <entry key="project.open.time.91" value="1" />
+          <entry key="project.open.time.92" value="1" />
           <entry key="project.open.time.95" value="1" />
           <entry key="project.open.time.96" value="2" />
           <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="33" />
+          <entry key="project.opened" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JPG" value="6" />
-          <entry key="config" value="1" />
-          <entry key="env" value="4" />
+          <entry key="config" value="2" />
+          <entry key="env" value="7" />
           <entry key="gitignore" value="2" />
-          <entry key="htaccess" value="1" />
-          <entry key="ico" value="1" />
-          <entry key="jpg" value="38" />
-          <entry key="js" value="101" />
-          <entry key="json" value="1" />
-          <entry key="php" value="728" />
+          <entry key="htaccess" value="2" />
+          <entry key="ico" value="2" />
+          <entry key="jpg" value="44" />
+          <entry key="js" value="201" />
+          <entry key="json" value="2" />
+          <entry key="php" value="1183" />
           <entry key="php~9f28b68d395d518559a897a73855f76066fd2a16" value="3" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
-          <entry key="svg" value="2" />
+          <entry key="svg" value="4" />
+          <entry key="txt" value="1" />
+          <entry key="vue" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="4" />
-          <entry key="Blade" value="213" />
-          <entry key="Image" value="46" />
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="101" />
-          <entry key="PHP" value="515" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key=".env file" value="7" />
+          <entry key="Blade" value="389" />
+          <entry key="Image" value="53" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="201" />
+          <entry key="PHP" value="794" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="RNG Compact" value="1" />
-          <entry key="SVG" value="2" />
-          <entry key="htaccess" value="1" />
+          <entry key="SVG" value="4" />
+          <entry key="Vue.js" value="1" />
+          <entry key="htaccess" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="4" />
+          <entry key="dummy" value="29" />
+          <entry key="env" value="1" />
           <entry key="gitignore" value="7" />
-          <entry key="js" value="4249" />
-          <entry key="php" value="44929" />
+          <entry key="js" value="5958" />
+          <entry key="php" value="70830" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="22719" />
+          <entry key=".env file" value="1" />
+          <entry key="Blade" value="28503" />
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="8" />
-          <entry key="JavaScript" value="4245" />
-          <entry key="PHP" value="22205" />
-          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="HTML" value="9" />
+          <entry key="JavaScript" value="5954" />
+          <entry key="PHP" value="42321" />
+          <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
     </session>
@@ -118,20 +275,7 @@
     <favorites_list name="laravel" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-              <folding>
-                <element signature="e#6#388#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -161,6 +305,17 @@
       <find>te-</find>
       <find>te</find>
       <find>tabId</find>
+      <find>findAnnonce</find>
+      <find>where</find>
+      <find>first</find>
+      <find>showde</find>
+      <find>finda</find>
+      <find>commander</find>
+      <find>get</find>
+      <find>getS</find>
+      <find>auth()-&gt;user()</find>
+      <find>auth()</find>
+      <find>id_user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,57 +324,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Maison.php" />
-        <option value="$PROJECT_DIR$/app/ResetPassword.php" />
-        <option value="$PROJECT_DIR$/app/Studio.php" />
-        <option value="$PROJECT_DIR$/app/Terrain.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Vente.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_03_200157_create-user-table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_122700_create_agences_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130531_create_ventes_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130823_create_locations_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130853_create_colocations_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130913_create_garages_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130928_create_studios_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130941_create_terrains_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_130956_create_appartements_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_131010_create_maisons_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" />
-        <option value="$PROJECT_DIR$/resources/views/annonce/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/annonce/modifier.blade.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public/js/functions/functions_carte.js" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/partials/_form_de_recherche.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/partials/filter_search_carte.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/partials/_filter_search_carte.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_08_104453_create_reservations_table.php" />
-        <option value="$PROJECT_DIR$/app/Reservation.php" />
-        <option value="$PROJECT_DIR$/app/Notification.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php" />
-        <option value="$PROJECT_DIR$/app/Mail/CommandeMail.php" />
-        <option value="$PROJECT_DIR$/resources/views/emails/commander.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/notifications.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" />
-        <option value="$PROJECT_DIR$/app/Favoris.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_09_111820_create_favoris_table.php" />
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_load.blade.php" />
-        <option value="$PROJECT_DIR$/storage/framework/views/ffe1b3c2858fa2840352ae3e1072f8969f0f6c0c.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/profil.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" />
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" />
+        <option value="$PROJECT_DIR$/public/js/recherche_annonce/event_on_markers.js" />
         <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_change.js" />
         <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_move.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" />
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" />
-        <option value="$PROJECT_DIR$/resources/views/favoris.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/carte/JS_Maps/eventMap.js" />
+        <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" />
         <option value="$PROJECT_DIR$/resources/views/carte.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/alertes/modif_alerte.blade.php" />
+        <option value="$PROJECT_DIR$/app/Alerte.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/partials/_load_files_script_filter_map.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/alertes/details_annonce_alerte.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/agence/register_agence.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgenceRegisterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/agence/login_agence.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/reset_password_agence_mail.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordAgenceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/agence/edit_profile_agence.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AlerteController.php" />
+        <option value="$PROJECT_DIR$/resources/views/notifications.blade.php" />
+        <option value="$PROJECT_DIR$/app/Mail/CommandeMail.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_03_23_124137_create_annonces_table.php" />
+        <option value="$PROJECT_DIR$/app/AnnonceAgence.php" />
+        <option value="$PROJECT_DIR$/app/AnnonceUser.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_26_164708_create_annonce_agences_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_26_164748_create_annonce_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_28_084654_create_notification_agences_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_28_084747_create_notification_users_table.php" />
+        <option value="$PROJECT_DIR$/app/NotificationAgence.php" />
+        <option value="$PROJECT_DIR$/app/NotificationUser.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgenceProfileController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AgenceLoginController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserAuthController.php" />
+        <option value="$PROJECT_DIR$/resources/views/alertes/afficher_mes_alertes.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/functions/functions_carte.js" />
         <option value="$PROJECT_DIR$/public/js/functions/functions_map_effets.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserLoginController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserProfilController.php" />
+        <option value="$PROJECT_DIR$/resources/views/agence/profile_agence.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/annonce/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/commander.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/favoris.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" />
       </list>
     </option>
   </component>
@@ -327,7 +482,7 @@
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="835" />
@@ -336,254 +491,283 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectUserFactors">
     <factor id="binaryFeature:liftShorter">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="24,0" />
+        <observation name="false" value="45,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:liftShorterClasses">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:middleMatching">
-      <dailyData date="10-04-2019">
-        <observation name="false" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="false" value="69,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:nonGeneric">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_inResolveScope">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="37,0" />
+        <observation name="false" value="3,0" />
+        <observation name="true" value="29,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_openedInEditor">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="37,0" />
+        <observation name="false" value="6,0" />
+        <observation name="true" value="26,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameDirectory">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="37,0" />
+        <observation name="false" value="5,0" />
+        <observation name="true" value="27,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameLogicalRoot">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="37,0" />
+        <observation name="false" value="3,0" />
+        <observation name="true" value="29,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sdkOrLibrary">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="37,0" />
+        <observation name="false" value="32,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:templates">
-      <dailyData date="10-04-2019">
-        <observation name="false" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="false" value="68,0" />
+        <observation name="true" value="1,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:accessible">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:expectedType">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:kind">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:methodsChains">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:prox_javaInheritance">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:prox_referenceList">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:recursion">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="completionFinishedType">
-      <dailyData date="10-04-2019">
-        <observation name="cancelled" value="93,0" />
-        <observation name="explicitSelect" value="38,0" />
-        <observation name="typedSelect" value="38,0" />
+      <dailyData date="29-04-2019">
+        <observation name="cancelled" value="469,0" />
+        <observation name="explicitSelect" value="30,0" />
+        <observation name="typedSelect" value="39,0" />
       </dailyData>
     </factor>
     <factor id="completionType">
-      <dailyData date="10-04-2019">
-        <observation name="BASIC" value="100,0" />
+      <dailyData date="29-04-2019">
+        <observation name="BASIC" value="110,0" />
       </dailyData>
     </factor>
     <factor id="completionUsage">
-      <dailyData date="10-04-2019">
-        <observation name="count" value="169,0" />
+      <dailyData date="29-04-2019">
+        <observation name="count" value="538,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="24,0" />
+        <observation name="average" value="0,0" />
+        <observation name="count" value="89,0" />
+        <observation name="max" value="0,0" />
+        <observation name="min" value="0,0" />
+        <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:grouping">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="24,0" />
+        <observation name="average" value="0,0" />
+        <observation name="count" value="89,0" />
+        <observation name="max" value="0,0" />
+        <observation name="min" value="0,0" />
+        <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:nameEnd">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:position">
-      <dailyData date="10-04-2019">
-        <observation name="average" value="0,092715" />
-        <observation name="count" value="151,0" />
-        <observation name="max" value="2,0" />
+      <dailyData date="29-04-2019">
+        <observation name="average" value="0,554745" />
+        <observation name="count" value="137,0" />
+        <observation name="max" value="6,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="0,102298" />
+        <observation name="variance" value="1,622895" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prefix">
-      <dailyData date="10-04-2019">
-        <observation name="average" value="-1124,483444" />
-        <observation name="count" value="151,0" />
+      <dailyData date="29-04-2019">
+        <observation name="average" value="-1128,138686" />
+        <observation name="count" value="137,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="-1203,0" />
-        <observation name="variance" value="18955,959045" />
+        <observation name="variance" value="12495,371254" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:priority">
-      <dailyData date="10-04-2019">
-        <observation name="average" value="-45,688742" />
-        <observation name="count" value="151,0" />
-        <observation name="max" value="-1,0" />
+      <dailyData date="29-04-2019">
+        <observation name="average" value="-16,510949" />
+        <observation name="count" value="137,0" />
+        <observation name="max" value="10,0" />
         <observation name="min" value="-102,0" />
-        <observation name="variance" value="1896,246842" />
+        <observation name="variance" value="795,600335" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_explicitlyImported">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_knownElement">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_sameModule">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="37,0" />
+        <observation name="average" value="1,873016" />
+        <observation name="count" value="63,0" />
+        <observation name="max" value="2,0" />
+        <observation name="min" value="0,0" />
+        <observation name="variance" value="0,14979" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_samePsiMember">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:query_length">
-      <dailyData date="10-04-2019">
+      <dailyData date="29-04-2019">
         <observation name="average" value="0,0" />
-        <observation name="count" value="151,0" />
+        <observation name="count" value="137,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:result_length">
-      <dailyData date="10-04-2019">
-        <observation name="average" value="6,953642" />
-        <observation name="count" value="151,0" />
+      <dailyData date="29-04-2019">
+        <observation name="average" value="5,576642" />
+        <observation name="count" value="137,0" />
         <observation name="max" value="16,0" />
         <observation name="min" value="1,0" />
-        <observation name="variance" value="13,562266" />
+        <observation name="variance" value="9,274024" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sameWords">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:shorter">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:simple">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sorter">
-      <dailyData date="10-04-2019">
+      <dailyData date="29-04-2019">
         <observation name="average" value="1,0" />
-        <observation name="count" value="151,0" />
+        <observation name="count" value="137,0" />
         <observation name="max" value="1,0" />
         <observation name="min" value="1,0" />
         <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:statics">
-      <dailyData date="10-04-2019">
-        <observation name="UNDEFINED" value="76,0" />
+      <dailyData date="29-04-2019">
+        <observation name="UNDEFINED" value="69,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:stats">
-      <dailyData date="10-04-2019">
-        <observation name="average" value="5537,642384" />
-        <observation name="count" value="151,0" />
+      <dailyData date="29-04-2019">
+        <observation name="average" value="7505,153285" />
+        <observation name="count" value="137,0" />
         <observation name="max" value="10000,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="20406282,483458" />
+        <observation name="variance" value="11683349,504473" />
       </dailyData>
     </factor>
     <factor id="itemPosition">
-      <dailyData date="10-04-2019">
-        <observation name="0" value="33,0" />
-        <observation name="1" value="3,0" />
+      <dailyData date="29-04-2019">
+        <observation name="0" value="19,0" />
+        <observation name="1" value="2,0" />
         <observation name="2" value="2,0" />
+        <observation name="3" value="1,0" />
+        <observation name="4" value="2,0" />
+        <observation name="5" value="3,0" />
+        <observation name="6" value="1,0" />
       </dailyData>
     </factor>
     <factor id="mnemonicsUsage">
-      <dailyData date="10-04-2019">
-        <observation name="total" value="33,0" />
-        <observation name="withMnemonics" value="1,0" />
+      <dailyData date="29-04-2019">
+        <observation name="total" value="27,0" />
+        <observation name="withMnemonics" value="0,0" />
       </dailyData>
     </factor>
     <factor id="prefixLength">
-      <dailyData date="10-04-2019">
-        <observation name="0" value="2,0" />
-        <observation name="1" value="3,0" />
-        <observation name="2" value="11,0" />
-        <observation name="3" value="14,0" />
-        <observation name="4" value="5,0" />
-        <observation name="5" value="1,0" />
+      <dailyData date="29-04-2019">
+        <observation name="0" value="1,0" />
+        <observation name="1" value="2,0" />
+        <observation name="2" value="7,0" />
+        <observation name="3" value="11,0" />
+        <observation name="4" value="6,0" />
+        <observation name="5" value="2,0" />
         <observation name="6" value="1,0" />
-        <observation name="7" value="1,0" />
       </dailyData>
     </factor>
     <factor id="timeBetweenTyping">
-      <dailyData date="10-04-2019">
-        <observation name="average" value="316,027174" />
-        <observation name="count" value="184,0" />
+      <dailyData date="29-04-2019">
+        <observation name="average" value="251,571429" />
+        <observation name="count" value="196,0" />
       </dailyData>
     </factor>
   </component>
@@ -634,13 +818,6 @@
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="recherche_annonce" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -657,7 +834,31 @@
             <path>
               <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="annonce" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="emails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -667,19 +868,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs.cucumber.cucumber_node_package_dir" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\SOS PHONE\Desktop\laravel\resources\views\annonce" />
-      <recent name="C:\Users\SOS PHONE\Desktop\laravel\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\SOS PHONE\Desktop\laravel\public" />
       <recent name="C:\Users\SOS PHONE\Desktop\laravel\storage\app\public" />
       <recent name="C:\Users\SOS PHONE\Desktop\laravel\public\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SOS PHONE\Desktop\laravel\resources\views" />
+      <recent name="C:\Users\SOS PHONE\Desktop\laravel\app\Http\Controllers" />
+      <recent name="C:\Users\SOS PHONE\Desktop\laravel\public\avatars" />
+      <recent name="C:\Users\SOS PHONE\Desktop\laravel\resources\views\agence" />
+      <recent name="C:\Users\SOS PHONE\Desktop\laravel\resources\views\annonce" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -693,6 +898,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ResetPasswordController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.ResetPasswordController.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -736,12 +951,27 @@
       <workItem from="1554763678170" duration="1858000" />
       <workItem from="1554807507877" duration="17570000" />
       <workItem from="1554896056222" duration="4625000" />
-      <workItem from="1554905992189" duration="7487000" />
+      <workItem from="1554905992189" duration="9154000" />
+      <workItem from="1554982103434" duration="1152000" />
+      <workItem from="1555161880374" duration="1620000" />
+      <workItem from="1555327475176" duration="22362000" />
+      <workItem from="1555405336904" duration="30709000" />
+      <workItem from="1555845441279" duration="13845000" />
+      <workItem from="1555932105065" duration="20627000" />
+      <workItem from="1556016064426" duration="367000" />
+      <workItem from="1556017251884" duration="34538000" />
+      <workItem from="1556060663053" duration="1246000" />
+      <workItem from="1556101950212" duration="16522000" />
+      <workItem from="1556191129956" duration="13666000" />
+      <workItem from="1556291146749" duration="7190000" />
+      <workItem from="1556363378329" duration="2301000" />
+      <workItem from="1556440795961" duration="22711000" />
+      <workItem from="1556536610061" duration="12166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434273000" />
+    <option name="totallyTimeSpent" value="636962000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,10 +983,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.2322239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.22314675" />
       <window_info id="Structure" order="1" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info id="Favorites" order="2" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -770,15 +999,15 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="10" weight="0.32843137" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.43300653" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32843137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.2322239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.24583964" />
       <window_info id="Structure" order="1" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info id="Favorites" order="2" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -792,12 +1021,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="10" weight="0.32843137" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.43300653" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32843137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -807,311 +1036,465 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_01_084616_create_table_annonce.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_02_102959_update_annonce_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_23_122700_create_agences_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_05_121632_create_resetpassword_table.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/a propos.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/connexion.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81" />
+        <state relative-caret-position="-25" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_23_131050_create_agence_membres_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_23_130531_create_ventes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_03_200157_create-user-table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_23_124137_create_annonces_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_23_130956_create_appartements_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Vente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ResetPassword.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/annonceController.php~9f28b68d395d518559a897a73855f76066fd2a16" />
-    <entry file="file://$PROJECT_DIR$/app/Agence.php" />
-    <entry file="file://$PROJECT_DIR$/../AgenceMembre.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/inscription.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="24" />
-        </state>
+        <state relative-caret-position="-25" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/annonce/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/modifprofil.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="359" column="30" lean-forward="true" selection-start-line="359" selection-start-column="30" selection-end-line="359" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/emails/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="36" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Notification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Reservation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Studio.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cover_img/19_1422477634.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/emails/commander.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="-85">
+          <caret line="18" column="85" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="85" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/notifications.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="43" />
-        </state>
+        <state relative-caret-position="-430" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/cover_img/1_374298330.jpg" />
+    <entry file="file://$PROJECT_DIR$/public/js/carte/Images_Maps/tramway.ico">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/CommandeMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/js/carte/Images_Maps/universite.svg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_08_104453_create_reservations_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/js/carte/JS_Maps/GeoJSONs/geojsonAlimentationsEtSupermarches.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Annonce.php">
+    <entry file="file://$PROJECT_DIR$/public/js/carte/JS_Maps/JS/alimentationsEtSuperMarches.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="11" column="41" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="41" />
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_09_111820_create_favoris_table.php">
+    <entry file="file://$PROJECT_DIR$/public/web.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="-226">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Favoris.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_carte.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_form_de_recherche.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_filter_search_carte.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret column="58" selection-start-column="58" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfilController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="77" column="43" lean-forward="true" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/ffe1b3c2858fa2840352ae3e1072f8969f0f6c0c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3726" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profil.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="185">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php">
+    <entry file="file://$PROJECT_DIR$/public/js/functions/functions_carte.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="848" column="44" selection-start-line="848" selection-start-column="44" selection-end-line="848" selection-end-column="44" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-            <element signature="e#540#610#0#PHP" />
-            <element signature="e#616#8728#0#PHP" />
-            <element signature="e#8734#9911#0#PHP" />
-            <element signature="e#9916#10908#0#PHP" />
-            <element signature="e#10913#11527#0#PHP" />
-            <element signature="e#11532#12049#0#PHP" />
-            <element signature="e#12054#12192#0#PHP" />
-            <element signature="e#12198#12711#0#PHP" />
-            <element signature="e#12717#13092#0#PHP" />
-            <element signature="e#13098#25763#0#PHP" />
-            <element signature="e#25769#26020#0#PHP" />
-            <element signature="e#26026#26593#0#PHP" />
-            <element signature="e#26599#26909#0#PHP" />
-            <element signature="e#34515#35542#0#PHP" />
-            <element signature="e#35548#37468#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/script_move.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/favoris.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="189" column="38" lean-forward="true" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/script_change.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4914">
-          <caret line="182" column="54" selection-start-line="182" selection-start-column="54" selection-end-line="182" selection-end-column="54" />
+        <state relative-caret-position="108">
+          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/functions/functions_map_effets.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-762">
-          <caret column="16" selection-start-column="12" selection-end-column="16" />
+        <state relative-caret-position="318">
+          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FavorisController.php">
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/robots.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-837">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgenceProfileController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgenceRegisterController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/AlerteMail.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/CommandeMail.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/Register.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/ResetPasswordMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/channels.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReservationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResetPasswordAgenceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <caret line="26" column="60" lean-forward="true" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserLoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AgenceLoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlerteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="234" column="66" selection-start-line="234" selection-start-column="59" selection-end-line="234" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/annonce/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="375" column="48" selection-start-line="375" selection-start-column="48" selection-end-line="375" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agence/profile_agence.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_load_files_script_filter_map.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3813">
+          <caret line="1" column="73" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/carte.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="198" column="23" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
+        <state relative-caret-position="405">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserProfilController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FavorisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
+          <folding>
+            <element signature="e#518#1070#0#PHP" />
+            <element signature="e#592#715#0#PHP" />
+            <element signature="e#609#714#1#PHP" />
+            <element signature="e#726#1070#0#PHP" />
+            <element signature="e#935#1059#0#PHP" />
+            <element signature="e#952#1058#1#PHP" />
+            <element signature="e#1193#2253#0#PHP" />
+            <element signature="e#1295#2253#0#PHP" />
+            <element signature="e#1375#2243#0#PHP" />
+            <element signature="e#1488#2243#0#PHP" />
+            <element signature="e#1576#2229#0#PHP" />
+            <element signature="e#1705#2229#0#PHP" />
+            <element signature="e#1803#2211#0#PHP" />
+            <element signature="e#1949#2211#0#PHP" />
+            <element signature="e#2053#2189#0#PHP" />
+            <element signature="e#2381#3250#0#PHP" />
+            <element signature="e#2449#3250#0#PHP" />
+            <element signature="e#2529#3240#0#PHP" />
+            <element signature="e#2609#3240#0#PHP" />
+            <element signature="e#2697#3226#0#PHP" />
+            <element signature="e#2789#3226#0#PHP" />
+            <element signature="e#2887#3208#0#PHP" />
+            <element signature="e#2991#3208#0#PHP" />
+            <element signature="e#3095#3186#0#PHP" />
+            <element signature="e#3362#3869#0#PHP" />
+            <element signature="e#3449#3869#0#PHP" />
+            <element signature="e#3533#3859#0#PHP" />
+            <element signature="e#3634#3859#0#PHP" />
+            <element signature="e#3730#3845#0#PHP" />
+            <element signature="e#3987#4390#0#PHP" />
+            <element signature="e#4046#4390#0#PHP" />
+            <element signature="e#4130#4380#0#PHP" />
+            <element signature="e#4196#4380#0#PHP" />
+            <element signature="e#4292#4366#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/script_load.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="185" column="43" selection-start-line="185" selection-start-column="37" selection-end-line="185" selection-end-column="43" />
+        <state relative-caret-position="162">
+          <caret line="167" column="18" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="18" />
+          <folding>
+            <element signature="e#594#632#0" expanded="true" />
+            <element signature="e#4491#4600#0" expanded="true" />
+            <element signature="e#4789#8081#0" expanded="true" />
+            <element signature="e#4903#7291#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/annonce/modifier.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="48" column="69" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="55" column="101" selection-start-line="55" selection-start-column="101" selection-end-line="55" selection-end-column="101" />
+          <folding>
+            <element signature="n#!!block;n#showDetails#0" expanded="true" />
+            <element signature="e#301#410#0" expanded="true" />
+            <element signature="e#320#404#0" expanded="true" />
+            <element signature="e#424#1634#0" expanded="true" />
+            <element signature="e#609#1628#0" expanded="true" />
+            <element signature="e#888#920#0" expanded="true" />
+            <element signature="e#977#1009#0" expanded="true" />
+            <element signature="e#938#1122#0" expanded="true" />
+            <element signature="e#1139#1495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/favoris.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="144" column="46" selection-start-line="144" selection-start-column="46" selection-end-line="144" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="784" column="158" selection-start-line="784" selection-start-column="158" selection-end-line="784" selection-end-column="158" />
+          <folding>
+            <element signature="e#864#991#0#PHP" />
+            <element signature="e#895#981#0#PHP" />
+            <element signature="e#1112#1308#0#PHP" />
+            <element signature="e#1214#1308#0#PHP" />
+            <element signature="e#1317#1444#0#PHP" />
+            <element signature="e#1348#1434#0#PHP" />
+            <element signature="e#1645#1772#0#PHP" />
+            <element signature="e#1676#1762#0#PHP" />
+            <element signature="e#1914#1958#0#PHP" />
+            <element signature="e#1914#2006#0#PHP" />
+            <element signature="e#1914#2046#0#PHP" />
+            <element signature="e#1914#2087#0#PHP" />
+            <element signature="e#1914#2135#0#PHP" />
+            <element signature="e#1914#2180#0#PHP" />
+            <element signature="e#1914#2220#0#PHP" />
+            <element signature="e#1914#2260#0#PHP" />
+            <element signature="e#2290#2416#0#PHP" />
+            <element signature="e#2321#2406#0#PHP" />
+            <element signature="e#2432#2476#0#PHP" />
+            <element signature="e#2432#2524#0#PHP" />
+            <element signature="e#2432#2564#0#PHP" />
+            <element signature="e#2432#2605#0#PHP" />
+            <element signature="e#2432#2649#0#PHP" />
+            <element signature="e#2432#2688#0#PHP" />
+            <element signature="e#2718#2844#0#PHP" />
+            <element signature="e#2749#2834#0#PHP" />
+            <element signature="e#3455#3575#0#PHP" />
+            <element signature="e#3715#3939#0#PHP" expanded="true" />
+            <element signature="e#4125#4205#0#PHP" />
+            <element signature="e#4325#4516#0#PHP" />
+            <element signature="e#4435#4516#0#PHP" />
+            <element signature="e#4732#5034#0#PHP" />
+            <element signature="e#4876#4985#0#PHP" />
+            <element signature="e#5161#5781#0#PHP" />
+            <element signature="e#26196#26242#0#PHP" expanded="true" />
+            <element signature="e#26429#26483#0#PHP" expanded="true" />
+            <element signature="e#26264#27404#0#PHP" expanded="true" />
+            <element signature="e#29388#29677#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/commander.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#6#388#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="1350">
+          <caret line="58" column="67" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="67" />
         </state>
       </provider>
     </entry>

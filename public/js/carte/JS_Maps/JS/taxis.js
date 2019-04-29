@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var styleTaxi = L.icon({
-    iconUrl : "js/carte/Images_Maps/taxis.svg",
+    iconUrl : "/js/carte/Images_Maps/taxis.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

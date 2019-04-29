@@ -365,13 +365,16 @@
                     if (data.status == 'Success'){
                         //on pourra plus tard mettre une modale avec bootsttrap
                         alert(data.message);
-                        window.location.replace('/profil');
+                        if (data.guard == 'user')
+                            window.location.replace('/profil');
+                        else
+                            window.location.replace('/profilAgence');
                     }else{
-                        /*$.each(data.message, function(key,value){
+                        $.each(data.message, function(key,value){
                             alert(key+' '+value);
-                        });*/
-                        alert(data.message);
-                        alert(data.info);
+                        });
+                        console.log(data.message);
+                        console.log(data.info);
                     }
                 }
             });

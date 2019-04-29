@@ -1,6 +1,7 @@
+{{--Le script qui permet de gérer les évènements de ce formulaire est 'script_move.js'--}}
 <div class="form-group">
     <input type="text" value="alger" class="form-control" id="recherche" placeholder="Rechercher une place" style="width: 350px;" ><br>
-    <a href="" class="btn btn-success">Rechercher</a>
+    <a id="rechercher-map" class="btn btn-success">Rechercher</a>
 </div>
 <div class="form-group">
     <input class="find" type="checkbox" id="vente" checked><label for="vente">Vente</label>
@@ -50,7 +51,7 @@
         <option value="1100">1100 DA</option>
         <option value="1200">1200 DA</option>
         <option value="1300">1300 DA</option>
-        <option value="1400+">1400 DA et +</option>
+        <option value="1400">1400 DA</option>
     </select>
 </div>
 <div class="form-group">
@@ -89,7 +90,7 @@
         <option value="1100">1100 DA</option>
         <option value="1200">1200 DA</option>
         <option value="1300">1300 DA</option>
-        <option value="1400+">1400 DA et +</option>
+        <option value="1400">1400 DA</option>
     </select>
 </div>
 <div class="form-group">
@@ -162,7 +163,7 @@
         <option value="200">200 m2</option>
         <option value="300">300 m2</option>
         <option value="400">400 m2</option>
-        <option value="500et+">500 m2 et +</option>
+        <option value="500">500 m2</option>
     </select>
 </div>
 <div class="form-group">

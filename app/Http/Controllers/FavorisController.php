@@ -15,8 +15,9 @@ use App\Terrain;
 use App\Vente;
 use Illuminate\Http\Request;
 
-class FavorisController extends Controller
-{
+class FavorisController extends Controller{
+
+    //ajouterfavoris
     public function addFavoris(Request $request){
         $favoris = Favoris::where('annonce_id','=',$request->id_annonce)->where('user_id','=',auth()->user()->id_user)->first();
         if ($favoris != null){
@@ -143,6 +144,7 @@ class FavorisController extends Controller
         return $tabImage ;
     }
 
+    //mesfavoris
     public function afficherMesFavoris(){
         $id = auth()->user()->id_user ;
         $tabAnnonce = collect([]);

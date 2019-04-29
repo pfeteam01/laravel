@@ -17,11 +17,11 @@ class CreateLocationsTable extends Migration
             $table->primary('id_location');
             $table->integer('id_location');
             $table->foreign('id_location')->references('id_annonce')->on('annonces');
-            $table->integer('loyer');
-            $table->integer('charge');
-            $table->integer('depot_de_garantie');
+            $table->bigInteger('loyer');
+            $table->bigInteger('charge');
+            $table->bigInteger('depot_de_garantie');
             $table->date('date_de_disponibilite');
-            $table->integer('duree_min')->nullable();
+            $table->bigInteger('duree_min')->nullable();
         });
     }
 

@@ -3,7 +3,13 @@
 <p>Pour cela, on vous a crée ce code, veuillez l'insérer dans la page qui s'affichera en cliquant sur ce lien:</p>
 <hr>
 <p>Voici votre code :</p>
-<p>{{$resetpass->code}}</p>
+<p>
+    @if(isset($dejamodif))
+        {{$dejamodif->code}}
+    @else
+        {{$resetpass->code}}
+    @endif
+</p>
 <br>
 <p>Rendez-vous sur ce lien :</p>
 <br>

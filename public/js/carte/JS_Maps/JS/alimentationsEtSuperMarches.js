@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style de ce geojson
 var styleAli = L.icon({
-    iconUrl : "js/carte/Images_Maps/supermarket.svg",
+    iconUrl : "/js/carte/Images_Maps/supermarket.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]

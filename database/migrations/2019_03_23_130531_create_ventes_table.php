@@ -17,7 +17,7 @@ class CreateVentesTable extends Migration
             $table->primary('id_vente');
             $table->integer('id_vente');
             $table->foreign('id_vente')->references('id_annonce')->on('annonces');
-            $table->integer('prix');
+            $table->bigInteger('prix');
         });
     }
 

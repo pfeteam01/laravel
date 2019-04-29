@@ -176,49 +176,24 @@
         <br><br><br><br>
         <label for="meubleterrain">Permis de construction: </label>
         <input type="checkbox" class="form-control" id="meubleterrain"  @if($typeBien == 'terrain'){{$typeBienObjet->permis_de_construction ? "checked" : "" }}@endif >
-
     </div>
-    <div class="form-group" id="Garage">
-    </div>
+    <div class="form-group" id="Garage"></div>
 
     <div class="form-group">
         <input type="file" id="file" multiple>
     </div>
     <ul id="charge">
-    @foreach($tabAnnonceImage as $e)
-            <li><img src="/cover_img/{{$e->nom_image}}" alt="Image de l'annonce" width="70" height="70"></li><br>
-        <a href="#" onclick="deleteImage({{$e->id_image}})">Supprimer</a><br>
+        @foreach($tabAnnonceImage as $e)
+            <li>
+                <img src="/cover_img/{{$e->nom_image}}" alt="Image de l'annonce" width="70" height="70">
+                <a href="{{url('/supprimerimageannonce/'.$e->id_image)}}" class="btn btn-link">Supprimer cette image</a>
+                <br><br>
+            </li>
         @endforeach
     </ul>
     <a class="btn btn-success" href="/changeetat/{{$annonce->id_annonce}}" id="changeretat">@if($annonce->etat == 1)Désactiver l'annonce @else Activer l'annonce @endif</a>
+    <br><br>
     <a class="btn btn-danger" href="/supprimerannonce/{{$annonce->id_annonce}}">Supprimer l'annonce</a>
-    <script>
-        function deleteImage(x){
-            var fd = new FormData();
-            fd.append('id',x);
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url:"{{ url('/supprimerimageannonce') }}",
-                method:"POST",
-                data:fd,
-                contentType: false,
-                processData: false,
-                dataType:'JSON',
-                success:function(data) {
-                    $('ul').empty();
-                    $.each(data.tabAnnonce, function(key, value){
-                        $('ul').append('<li><img src="/cover_img/'+value.nom_image+' " alt="Image" width="70" height="70"><br><a href="#" onclick="deleteImage('+value.id_image+')">Delete this image</a></li>');
-                    });
-                    $('html,body').animate({scrollTop: $("#charge").offset().top});
-                    alert(data.status+' ==> '+data.message);
-                }
-            });
-        }
-    </script>
     <br><br>
     <div class="form-group">
         <input type="submit" id="valider" value="Valider" class="btn btn-success"/>
@@ -230,7 +205,6 @@
         $('#location').hide();
         $('#colocation').hide();
         $('#{{$typeAction}}').show();
-
         $('#Appartement').hide();
         $('#Maison').hide();
         $('#Studio').hide();
@@ -386,6 +360,9 @@
                     fd.append('meubleterrain',1);
                 else
                     fd.append('meubleterrain',0);
+            }
+            else if (typeBien == 'garage'){
+
             }
             fd.append('typeBien',typeBien);
             fd.append('_token','{{csrf_token()}}');

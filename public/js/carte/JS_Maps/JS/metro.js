@@ -8,7 +8,7 @@ function afficherPopup(feature, layer){
 
 //Définir le style des markers de ce geojson
 var styleMetro = L.icon({
-    iconUrl : "js/carte/Images_Maps/metro.svg",
+    iconUrl : "/js/carte/Images_Maps/metro.svg",
     iconSize : [20,20],
     iconAnchor : [10,20],
     popupAnchor : [0,-20]
