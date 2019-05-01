@@ -48,6 +48,7 @@ function showDetails(id) {
             myid = data.annonce.id_annonce ;
             mylat = data.annonce.lat ;
             mylng = data.annonce.lng ;
+            //document.getElementById('cache').setAttribute('value',myid);
         }
     });
 }

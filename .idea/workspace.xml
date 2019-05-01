@@ -2,142 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dde07321-3235-4f86-99b4-b329ff4227b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordAgenceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/agence/edit_profile_agence.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/agence/login_agence.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/agence/profile_agence.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/agence/register_agence.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/alertes/afficher_mes_alertes.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/alertes/ajouter_alerte.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/alertes/details_annonce_alerte.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/alertes/modif_alerte.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/alerte_notify.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/register_agence_mail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/reset_password_agence_mail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_load_files_script_filter_map.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/resetpasswordagence/changerpassword.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/resetpasswordagence/confirmcode.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/resetpasswordagence/entermail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/createComment.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/editComment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Annonce.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserLoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authentification.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/CommandeMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/CommandeMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_124137_create_annonces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_124137_create_annonces_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_130531_create_ventes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_130531_create_ventes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_130823_create_locations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_130823_create_locations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_23_130853_create_colocations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_23_130853_create_colocations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_08_104537_create_notifications_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/19_1079508702.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/20_718970664.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/22_902154870.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/32_1027498643.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/acte_de_prop/32_552375808.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/12_1581268815.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/12_170946663.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/12_1745785450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/12_1869725955.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/15_1307263406.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/15_1710160339.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/15_2048915613.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/19_1310257374.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/19_1422477634.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/19_2008034971.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/19_663516757.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/19_820337982.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/20_1171512006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/20_1603242382.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/20_1795636276.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/20_650089097.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/21_2033865490.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/21_939694978.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/26_963963561.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1351010643.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1406198174.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1546092682.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/27_1745533247.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/27_816542725.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/28_1608202653.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/29_1073219418.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/29_1073404094.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/29_1671094888.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/29_19143466.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/29_391578913.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/30_799140336.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/30_974879199.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_1521989289.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_1646182906.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_498998679.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_658510451.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_751268982.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_846562286.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/33_991505739.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/8_1084077315.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/8_1483805877.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/8_1853373314.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/8_980051458.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/9_121516951.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/9_1751167323.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/9_1998377830.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cover_img/9_34066040.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/alimentationsEtSuperMarches.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/alimentationsEtSuperMarches.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/banques.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/banques.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bibliothequesEtCentresDeCulture.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bibliothequesEtCentresDeCulture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boucheries.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boucheries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boulangeriesEtPatesseries.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/boulangeriesEtPatesseries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bus.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/bus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cafeteria.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cafeteria.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cem.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/cem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/centresCommerciaux.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/centresCommerciaux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/fastFoosEtRestaurants.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/fastFoosEtRestaurants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/hopitaux.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/hopitaux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/librairies.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/librairies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/lycees.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/lycees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/metro.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/metro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/mosquees.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/mosquees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/musees.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/musees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/pharmacies.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/pharmacies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/piscines.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/piscines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/postes.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/postes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/primaires.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/primaires.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/sallesDeSportEtFitness.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/sallesDeSportEtFitness.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/shopping.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/shopping.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/taxis.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/taxis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/trains.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/trains.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/tramway.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/tramway.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/universite.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/JS/universite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/carte/JS_Maps/eventMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/carte/JS_Maps/eventMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/functions/functions_carte.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/functions/functions_carte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/functions/functions_map_effets.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/functions/functions_map_effets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/script_change.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/script_change.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/recherche_annonce/script_move.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/recherche_annonce/script_move.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/a propos.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/annonce/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annonce/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/annonce/modifier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annonce/modifier.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/carte.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/carte.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/commander.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/commander.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/resetpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/resetpassword.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/favoris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/favoris.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_carte.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_form_de_recherche.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_form_de_recherche.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notifications.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -167,7 +37,7 @@
     <session id="2106189036">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="43" />
+          <entry key="project.closed" value="44" />
           <entry key="project.open.time.102" value="1" />
           <entry key="project.open.time.103" value="1" />
           <entry key="project.open.time.104" value="1" />
@@ -196,7 +66,7 @@
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.open.time.63" value="1" />
+          <entry key="project.open.time.63" value="2" />
           <entry key="project.open.time.70" value="1" />
           <entry key="project.open.time.71" value="2" />
           <entry key="project.open.time.72" value="1" />
@@ -211,7 +81,7 @@
           <entry key="project.open.time.95" value="1" />
           <entry key="project.open.time.96" value="2" />
           <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="48" />
+          <entry key="project.opened" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -223,9 +93,9 @@
           <entry key="htaccess" value="2" />
           <entry key="ico" value="2" />
           <entry key="jpg" value="44" />
-          <entry key="js" value="201" />
+          <entry key="js" value="206" />
           <entry key="json" value="2" />
-          <entry key="php" value="1183" />
+          <entry key="php" value="1202" />
           <entry key="php~9f28b68d395d518559a897a73855f76066fd2a16" value="3" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
@@ -237,11 +107,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="7" />
-          <entry key="Blade" value="389" />
+          <entry key="Blade" value="394" />
           <entry key="Image" value="53" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="201" />
-          <entry key="PHP" value="794" />
+          <entry key="JavaScript" value="206" />
+          <entry key="PHP" value="808" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="4" />
@@ -254,19 +124,26 @@
           <entry key="dummy" value="29" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="7" />
-          <entry key="js" value="5958" />
-          <entry key="php" value="70830" />
+          <entry key="js" value="5961" />
+          <entry key="php" value="74015" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="Blade" value="28503" />
+          <entry key="Blade" value="29025" />
           <entry key="CSS" value="1" />
           <entry key="HTML" value="9" />
-          <entry key="JavaScript" value="5954" />
-          <entry key="PHP" value="42321" />
+          <entry key="JavaScript" value="5957" />
+          <entry key="PHP" value="44984" />
           <entry key="PLAIN_TEXT" value="36" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.new.test">
+        <counts>
+          <entry key="source.empty" value="1" />
+          <entry key="with.framework.PHPUnit.without.selected.methods" value="1" />
+          <entry key="without.target.element" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -275,7 +152,7 @@
     <favorites_list name="laravel" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -324,16 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/event_on_markers.js" />
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_change.js" />
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_move.js" />
-        <option value="$PROJECT_DIR$/public/js/carte/JS_Maps/eventMap.js" />
-        <option value="$PROJECT_DIR$/public/js/recherche_annonce/script_load.js" />
-        <option value="$PROJECT_DIR$/resources/views/carte.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/alertes/modif_alerte.blade.php" />
-        <option value="$PROJECT_DIR$/app/Alerte.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/partials/_load_files_script_filter_map.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/alertes/details_annonce_alerte.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/agence/register_agence.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AgenceRegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/agence/login_agence.blade.php" />
@@ -370,11 +237,21 @@
         <option value="$PROJECT_DIR$/resources/views/agence/profile_agence.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/annonce/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FavorisController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/commander.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/favoris.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_30_104150_create_comments_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_30_104250_create_user_comments_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_30_104306_create_agence_comments_table.php" />
+        <option value="$PROJECT_DIR$/app/Comment.php" />
+        <option value="$PROJECT_DIR$/app/UserComment.php" />
+        <option value="$PROJECT_DIR$/app/AgenceComment.php" />
+        <option value="$PROJECT_DIR$/resources/views/createComment.blade.php" />
         <option value="$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/editComment.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
       </list>
     </option>
   </component>
@@ -491,283 +368,286 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectUserFactors">
     <factor id="binaryFeature:liftShorter">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="24,0" />
-        <observation name="false" value="45,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="29,0" />
+        <observation name="false" value="194,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:liftShorterClasses">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:middleMatching">
-      <dailyData date="29-04-2019">
-        <observation name="false" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="false" value="223,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:nonGeneric">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_inResolveScope">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="37,0" />
-        <observation name="false" value="3,0" />
-        <observation name="true" value="29,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="85,0" />
+        <observation name="false" value="49,0" />
+        <observation name="true" value="89,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_openedInEditor">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="37,0" />
-        <observation name="false" value="6,0" />
-        <observation name="true" value="26,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="85,0" />
+        <observation name="false" value="60,0" />
+        <observation name="true" value="78,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameDirectory">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="37,0" />
-        <observation name="false" value="5,0" />
-        <observation name="true" value="27,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="85,0" />
+        <observation name="false" value="60,0" />
+        <observation name="true" value="78,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sameLogicalRoot">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="37,0" />
-        <observation name="false" value="3,0" />
-        <observation name="true" value="29,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="85,0" />
+        <observation name="false" value="49,0" />
+        <observation name="true" value="89,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:prox_sdkOrLibrary">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="37,0" />
-        <observation name="false" value="32,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="85,0" />
+        <observation name="false" value="138,0" />
       </dailyData>
     </factor>
     <factor id="binaryFeature:templates">
-      <dailyData date="29-04-2019">
-        <observation name="false" value="68,0" />
+      <dailyData date="30-04-2019">
+        <observation name="false" value="222,0" />
         <observation name="true" value="1,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:accessible">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:expectedType">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:kind">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:methodsChains">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:prox_javaInheritance">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:prox_referenceList">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="categoricalFeature:recursion">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="completionFinishedType">
-      <dailyData date="29-04-2019">
-        <observation name="cancelled" value="469,0" />
-        <observation name="explicitSelect" value="30,0" />
-        <observation name="typedSelect" value="39,0" />
+      <dailyData date="30-04-2019">
+        <observation name="cancelled" value="1353,0" />
+        <observation name="explicitSelect" value="152,0" />
+        <observation name="typedSelect" value="71,0" />
       </dailyData>
     </factor>
     <factor id="completionType">
-      <dailyData date="29-04-2019">
-        <observation name="BASIC" value="110,0" />
+      <dailyData date="30-04-2019">
+        <observation name="BASIC" value="324,0" />
       </dailyData>
     </factor>
     <factor id="completionUsage">
-      <dailyData date="29-04-2019">
-        <observation name="count" value="538,0" />
+      <dailyData date="30-04-2019">
+        <observation name="count" value="1576,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="24,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="29,0" />
         <observation name="average" value="0,0" />
-        <observation name="count" value="89,0" />
+        <observation name="count" value="387,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:grouping">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="24,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="29,0" />
         <observation name="average" value="0,0" />
-        <observation name="count" value="89,0" />
+        <observation name="count" value="387,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:nameEnd">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:position">
-      <dailyData date="29-04-2019">
-        <observation name="average" value="0,554745" />
-        <observation name="count" value="137,0" />
+      <dailyData date="30-04-2019">
+        <observation name="average" value="0,25618" />
+        <observation name="count" value="445,0" />
         <observation name="max" value="6,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="1,622895" />
+        <observation name="variance" value="0,503027" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prefix">
-      <dailyData date="29-04-2019">
-        <observation name="average" value="-1128,138686" />
-        <observation name="count" value="137,0" />
+      <dailyData date="30-04-2019">
+        <observation name="average" value="-1116,566292" />
+        <observation name="count" value="445,0" />
         <observation name="max" value="0,0" />
-        <observation name="min" value="-1203,0" />
-        <observation name="variance" value="12495,371254" />
+        <observation name="min" value="-1202,0" />
+        <observation name="variance" value="25091,504196" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:priority">
-      <dailyData date="29-04-2019">
-        <observation name="average" value="-16,510949" />
-        <observation name="count" value="137,0" />
+      <dailyData date="30-04-2019">
+        <observation name="average" value="-5,024719" />
+        <observation name="count" value="445,0" />
         <observation name="max" value="10,0" />
         <observation name="min" value="-102,0" />
-        <observation name="variance" value="795,600335" />
+        <observation name="variance" value="509,36813" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_explicitlyImported">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_knownElement">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_sameModule">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="37,0" />
-        <observation name="average" value="1,873016" />
-        <observation name="count" value="63,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="85,0" />
+        <observation name="average" value="1,309091" />
+        <observation name="count" value="275,0" />
         <observation name="max" value="2,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="0,14979" />
+        <observation name="variance" value="0,796016" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:prox_samePsiMember">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:query_length">
-      <dailyData date="29-04-2019">
+      <dailyData date="30-04-2019">
         <observation name="average" value="0,0" />
-        <observation name="count" value="137,0" />
+        <observation name="count" value="445,0" />
         <observation name="max" value="0,0" />
         <observation name="min" value="0,0" />
         <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:result_length">
-      <dailyData date="29-04-2019">
-        <observation name="average" value="5,576642" />
-        <observation name="count" value="137,0" />
-        <observation name="max" value="16,0" />
+      <dailyData date="30-04-2019">
+        <observation name="average" value="6,564045" />
+        <observation name="count" value="445,0" />
+        <observation name="max" value="24,0" />
         <observation name="min" value="1,0" />
-        <observation name="variance" value="9,274024" />
+        <observation name="variance" value="12,869934" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sameWords">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:shorter">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:simple">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:sorter">
-      <dailyData date="29-04-2019">
+      <dailyData date="30-04-2019">
         <observation name="average" value="1,0" />
-        <observation name="count" value="137,0" />
+        <observation name="count" value="445,0" />
         <observation name="max" value="1,0" />
         <observation name="min" value="1,0" />
         <observation name="variance" value="0,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:statics">
-      <dailyData date="29-04-2019">
-        <observation name="UNDEFINED" value="69,0" />
+      <dailyData date="30-04-2019">
+        <observation name="UNDEFINED" value="223,0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:stats">
-      <dailyData date="29-04-2019">
-        <observation name="average" value="7505,153285" />
-        <observation name="count" value="137,0" />
+      <dailyData date="30-04-2019">
+        <observation name="average" value="8348,289888" />
+        <observation name="count" value="445,0" />
         <observation name="max" value="10000,0" />
         <observation name="min" value="0,0" />
-        <observation name="variance" value="11683349,504473" />
+        <observation name="variance" value="11815287,710352" />
       </dailyData>
     </factor>
     <factor id="itemPosition">
-      <dailyData date="29-04-2019">
-        <observation name="0" value="19,0" />
-        <observation name="1" value="2,0" />
-        <observation name="2" value="2,0" />
+      <dailyData date="30-04-2019">
+        <observation name="0" value="118,0" />
+        <observation name="1" value="24,0" />
+        <observation name="2" value="5,0" />
         <observation name="3" value="1,0" />
-        <observation name="4" value="2,0" />
-        <observation name="5" value="3,0" />
-        <observation name="6" value="1,0" />
-      </dailyData>
-    </factor>
-    <factor id="mnemonicsUsage">
-      <dailyData date="29-04-2019">
-        <observation name="total" value="27,0" />
-        <observation name="withMnemonics" value="0,0" />
-      </dailyData>
-    </factor>
-    <factor id="prefixLength">
-      <dailyData date="29-04-2019">
-        <observation name="0" value="1,0" />
-        <observation name="1" value="2,0" />
-        <observation name="2" value="7,0" />
-        <observation name="3" value="11,0" />
-        <observation name="4" value="6,0" />
+        <observation name="4" value="1,0" />
         <observation name="5" value="2,0" />
         <observation name="6" value="1,0" />
       </dailyData>
     </factor>
+    <factor id="mnemonicsUsage">
+      <dailyData date="30-04-2019">
+        <observation name="total" value="133,0" />
+        <observation name="withMnemonics" value="5,0" />
+      </dailyData>
+    </factor>
+    <factor id="prefixLength">
+      <dailyData date="30-04-2019">
+        <observation name="0" value="5,0" />
+        <observation name="1" value="14,0" />
+        <observation name="15" value="1,0" />
+        <observation name="2" value="46,0" />
+        <observation name="3" value="43,0" />
+        <observation name="4" value="28,0" />
+        <observation name="5" value="7,0" />
+        <observation name="6" value="5,0" />
+        <observation name="7" value="2,0" />
+        <observation name="8" value="1,0" />
+      </dailyData>
+    </factor>
     <factor id="timeBetweenTyping">
-      <dailyData date="29-04-2019">
-        <observation name="average" value="251,571429" />
-        <observation name="count" value="196,0" />
+      <dailyData date="30-04-2019">
+        <observation name="average" value="331,676923" />
+        <observation name="count" value="455,0" />
       </dailyData>
     </factor>
   </component>
@@ -787,42 +667,6 @@
             <path>
               <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="recherche_annonce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -830,35 +674,6 @@
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="annonce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="emails" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -868,10 +683,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="nodejs.cucumber.cucumber_node_package_dir" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -967,11 +783,12 @@
       <workItem from="1556363378329" duration="2301000" />
       <workItem from="1556440795961" duration="22711000" />
       <workItem from="1556536610061" duration="12166000" />
+      <workItem from="1556619912286" duration="19888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="636962000" />
+    <option name="totallyTimeSpent" value="656850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -985,7 +802,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.22314675" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.23298033" />
       <window_info id="Structure" order="1" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info id="Favorites" order="2" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1007,7 +824,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.24583964" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.498366" visible="true" weight="0.24810892" />
       <window_info id="Structure" order="1" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info id="Favorites" order="2" sideWeight="0.501634" side_tool="true" weight="0.21785174" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1035,43 +852,18 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php</url>
+          <line>151</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/a propos.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/connexion.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inscription.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/modifprofil.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="18" column="85" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/notifications.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cover_img/1_374298330.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/js/carte/Images_Maps/tramway.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/carte/Images_Maps/universite.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/carte/JS_Maps/GeoJSONs/geojsonAlimentationsEtSupermarches.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/carte/JS_Maps/JS/alimentationsEtSuperMarches.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1250,13 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/carte.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserProfilController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1268,55 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
-          <folding>
-            <element signature="e#518#1070#0#PHP" />
-            <element signature="e#592#715#0#PHP" />
-            <element signature="e#609#714#1#PHP" />
-            <element signature="e#726#1070#0#PHP" />
-            <element signature="e#935#1059#0#PHP" />
-            <element signature="e#952#1058#1#PHP" />
-            <element signature="e#1193#2253#0#PHP" />
-            <element signature="e#1295#2253#0#PHP" />
-            <element signature="e#1375#2243#0#PHP" />
-            <element signature="e#1488#2243#0#PHP" />
-            <element signature="e#1576#2229#0#PHP" />
-            <element signature="e#1705#2229#0#PHP" />
-            <element signature="e#1803#2211#0#PHP" />
-            <element signature="e#1949#2211#0#PHP" />
-            <element signature="e#2053#2189#0#PHP" />
-            <element signature="e#2381#3250#0#PHP" />
-            <element signature="e#2449#3250#0#PHP" />
-            <element signature="e#2529#3240#0#PHP" />
-            <element signature="e#2609#3240#0#PHP" />
-            <element signature="e#2697#3226#0#PHP" />
-            <element signature="e#2789#3226#0#PHP" />
-            <element signature="e#2887#3208#0#PHP" />
-            <element signature="e#2991#3208#0#PHP" />
-            <element signature="e#3095#3186#0#PHP" />
-            <element signature="e#3362#3869#0#PHP" />
-            <element signature="e#3449#3869#0#PHP" />
-            <element signature="e#3533#3859#0#PHP" />
-            <element signature="e#3634#3859#0#PHP" />
-            <element signature="e#3730#3845#0#PHP" />
-            <element signature="e#3987#4390#0#PHP" />
-            <element signature="e#4046#4390#0#PHP" />
-            <element signature="e#4130#4380#0#PHP" />
-            <element signature="e#4196#4380#0#PHP" />
-            <element signature="e#4292#4366#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/script_load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="167" column="18" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="18" />
-          <folding>
-            <element signature="e#594#632#0" expanded="true" />
-            <element signature="e#4491#4600#0" expanded="true" />
-            <element signature="e#4789#8081#0" expanded="true" />
-            <element signature="e#4903#7291#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1324,102 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="48" column="69" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="e#0#5#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1539">
-          <caret line="55" column="101" selection-start-line="55" selection-start-column="101" selection-end-line="55" selection-end-column="101" />
-          <folding>
-            <element signature="n#!!block;n#showDetails#0" expanded="true" />
-            <element signature="e#301#410#0" expanded="true" />
-            <element signature="e#320#404#0" expanded="true" />
-            <element signature="e#424#1634#0" expanded="true" />
-            <element signature="e#609#1628#0" expanded="true" />
-            <element signature="e#888#920#0" expanded="true" />
-            <element signature="e#977#1009#0" expanded="true" />
-            <element signature="e#938#1122#0" expanded="true" />
-            <element signature="e#1139#1495#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1430,17 +1070,148 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/commander.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_30_104250_create_user_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="e#326#437#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_30_104306_create_agence_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="39" />
+          <folding>
+            <element signature="e#330#441#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_30_104150_create_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="e#317#428#1#PHP" expanded="true" />
+            <element signature="n#down#0;n#CreateCommentsTable#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#280#360#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/UserComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AgenceComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/carte.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="e#113#221#0#HTML" expanded="true" />
+            <element signature="e#424#790#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/createComment.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/script_load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3240">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding>
+            <element signature="e#594#632#0" expanded="true" />
+            <element signature="e#4491#4600#0" expanded="true" />
+            <element signature="e#4614#8087#0" expanded="true" />
+            <element signature="e#4789#8081#0" expanded="true" />
+            <element signature="e#4903#7291#0" expanded="true" />
+            <element signature="e#4949#5334#0" expanded="true" />
+            <element signature="e#5058#5314#0" expanded="true" />
+            <element signature="e#5355#5737#0" expanded="true" />
+            <element signature="e#5464#5717#0" expanded="true" />
+            <element signature="e#5884#7277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/recherche_annonce/detailler_annonce.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-303">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#301#410#0" expanded="true" />
+            <element signature="e#320#404#0" expanded="true" />
+            <element signature="e#888#960#0" expanded="true" />
+            <element signature="e#977#1123#0" expanded="true" />
+            <element signature="e#1164#1348#0" expanded="true" />
+            <element signature="e#1365#1905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_modale_for_detailler_annonce.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="56" />
+        <state relative-caret-position="237">
+          <caret line="78" column="46" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
+          <folding>
+            <element signature="n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="e#3450#3575#0#HTML" expanded="true" />
+            <element signature="e#3473#3565#0#HTML" expanded="true" />
+            <element signature="e#3521#3561#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AnnonceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="784" column="158" selection-start-line="784" selection-start-column="158" selection-end-line="784" selection-end-column="158" />
+        <state relative-caret-position="729">
+          <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
           <folding>
             <element signature="e#864#991#0#PHP" />
             <element signature="e#895#981#0#PHP" />
@@ -1469,32 +1240,43 @@
             <element signature="e#2718#2844#0#PHP" />
             <element signature="e#2749#2834#0#PHP" />
             <element signature="e#3455#3575#0#PHP" />
-            <element signature="e#3715#3939#0#PHP" expanded="true" />
             <element signature="e#4125#4205#0#PHP" />
             <element signature="e#4325#4516#0#PHP" />
             <element signature="e#4435#4516#0#PHP" />
             <element signature="e#4732#5034#0#PHP" />
             <element signature="e#4876#4985#0#PHP" />
             <element signature="e#5161#5781#0#PHP" />
-            <element signature="e#26196#26242#0#PHP" expanded="true" />
-            <element signature="e#26429#26483#0#PHP" expanded="true" />
-            <element signature="e#26264#27404#0#PHP" expanded="true" />
-            <element signature="e#29388#29677#1#PHP" expanded="true" />
+            <element signature="e#14915#16457#0#PHP" expanded="true" />
+            <element signature="e#28345#32096#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/emails/commander.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="58" column="67" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="67" />
+        <state relative-caret-position="2700">
+          <caret line="95" column="66" lean-forward="true" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/editComment.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1317">
+          <caret line="216" column="14" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#1120#2490#0#PHP" expanded="true" />
+            <element signature="e#3272#4226#0#PHP" expanded="true" />
+            <element signature="e#4758#5727#0#PHP" expanded="true" />
+            <element signature="e#6562#7381#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

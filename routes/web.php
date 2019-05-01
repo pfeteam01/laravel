@@ -87,4 +87,11 @@ Route::get('/resetpasswordagencepart2','ResetPasswordAgenceController@afficherCo
 Route::post('/verifcodeagence','ResetPasswordAgenceController@resetPasswordVerifCode');;//resetpasswordagence/confirmcode.blade.php
 Route::get('/resetpasswordagencepart3','ResetPasswordAgenceController@afficherChangerPassword');;//resetpasswordagence/confirmcode.blade.php
 Route::post('/changerpasswordagence','ResetPasswordAgenceController@resetPasswordChangerPassword');;//resetpasswordagence/changerpassword.blade.php
-//----------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------------------------------------//
+Route::post('/storeComment','CommentController@store');;//carte.blade.php
+Route::post('/showcommentsannonce','CommentController@showAllComments');;//??
+Route::post('/affichermescommentaires','CommentController@showMyComments');;//??
+Route::get('/affichermodifcomment/{id}','CommentController@edit');;//??
+Route::post('/updateComment/{id}','CommentController@update');;//editComment.blade.php
+Route::get('/deleteComment/{id}','CommentController@delete');;//??
+//--------------------------------------------------------------------------------------------------------------//

@@ -30,6 +30,20 @@
                     <input type="submit" value="Envoyer">
                 </form>
                 <button id="favoris" type="button" class="btn btn-light"><span class="addremove"></span></button><br>
+                @if (auth()->guard('agence')->check() || auth()->check())
+                    <form method="POST" id="poster_comment">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            {{--<input id="cache" type="hidden" value="" name="annonce_id">--}}
+                            <label>Commentaire</label><br>
+                            <textarea id="body_comment" name="body_comment" rows="8" cols="45"  placeholder="Poster un commentaire"> </textarea>
+                            <br>
+                        </div>
+                        <input type="submit" name="Poster le commantaire...">
+                    </form>
+                @else
+                    <a href="{{ url('/login') }}">veuillez vous Conncter afin de publier un commantaire. </a>
+                @endif
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -38,3 +52,33 @@
         </div>
     </div>
 </div>
+<script>
+    $('#poster_comment').on('submit', function(event){
+        event.preventDefault();
+        var fd = new FormData();
+        fd.append('annonce_id',myid);
+        fd.append('body_comment',$('#body_comment').val());
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url:"{{url('\storeComment')}}",
+            method:"POST",
+            data:fd,
+            contentType: false,
+            processData: false,
+            dataType:'JSON',
+            success:function(data) {
+                if (data.status == 'Success'){
+                    $('#body_comment').val('');
+                    alert(data.message);
+                }
+                else{
+                    console.log(data.message);
+                }
+            }
+        });
+    });
+</script>
