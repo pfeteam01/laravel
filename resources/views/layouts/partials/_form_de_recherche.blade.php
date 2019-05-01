@@ -176,3 +176,9 @@
         <option value="all" selected>Toutes les dates</option>
     </select>
 </div>
+
+<script>
+    $('#rechercher-map').on('click',function () {
+        alert("rrrr");
+    });
+</script>

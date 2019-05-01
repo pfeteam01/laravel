@@ -172,7 +172,15 @@ $(document).ready(function() {
         processData: false,
         dataType:'JSON',
         success:function(data) {
+<<<<<<< HEAD
             var i = 0 ; var annonces =  ''; var tab = [];
+=======
+            console.log(data.mesfavoris);
+            var i = 0 ;
+            var annonces =  '';
+            var tab = [];
+            console.log(data.image);
+>>>>>>> 7694738eab9cd0c199e2344a80ac97826cc2d4ea
             for ( i = 0 ;i< data.annonce.length ; i++){
                 if (data.mesfavoris[i] == 0){
                     var circleMarkerAnnonce = L.circleMarker( [data.annonce[i].lat , data.annonce[i].lng], {

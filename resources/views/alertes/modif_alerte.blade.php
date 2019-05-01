@@ -73,7 +73,11 @@
             <input @if($sesActions->contains('colocation')) {{'checked'}} @endif name="colocation" type="checkbox" id="colocation"><label for="colocation">Colocation</label>
         </div>
         <div class="form-group">
+<<<<<<< HEAD
             <input class="btn btn-info" type="submit" value="Modifier l'alerte">
+=======
+            <input class="btn btn-info" type="submit" value="Modifier l'annonce">
+>>>>>>> 7694738eab9cd0c199e2344a80ac97826cc2d4ea
         </div>
     </form>
 @stop

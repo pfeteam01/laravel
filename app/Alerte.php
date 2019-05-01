@@ -10,6 +10,7 @@ class Alerte extends Model
     protected $table = 'alertes' ;
     public $timestamps = true ;
     protected $primaryKey = 'id_alerte';
+<<<<<<< HEAD
 
     public static function getSesBiens($id){
         $resultat = collect([]);
@@ -41,4 +42,6 @@ class Alerte extends Model
         }
         return $resultat ;
     }
+=======
+>>>>>>> 7694738eab9cd0c199e2344a80ac97826cc2d4ea
 }
